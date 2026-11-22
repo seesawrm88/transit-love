@@ -4001,7 +4001,7 @@ function renderInbox() {
   var body = $('#inbox-body');
   if (!body) return;
   if (!S.inbox.length) {
-    body.innerHTML = '<div class="ib-empty">아직 주고받은 메세지가 없어요.<br>밤이 되면 마음이 머문 <b>한 사람</b>에게 보낼 수 있어요.</div>';
+    body.innerHTML = '<div class="ib-empty">아직 주고받은 메시지가 없어요.<br>밤이 되면 마음이 머문 <b>한 사람</b>에게 보낼 수 있어요.</div>';
     return;
   }
   var days = {};
@@ -4015,7 +4015,7 @@ function renderInbox() {
     html += '<div class="ib-day' + (idx ? ' collapsed' : '') + '">';
     html += '<button class="ib-head" type="button">' +
       '<span class="ib-daynum">DAY ' + pad2(d) + '</span>' +
-      '<span class="ib-daymeta">밤 · 받은 메세지 ' + recv + '통</span>' +
+      '<span class="ib-daymeta">밤 · 받은 메시지 ' + recv + '통</span>' +
       '<i class="ib-chev">⌄</i></button>';
     html += '<div class="ib-list">';
     notes.forEach(function (n) {
