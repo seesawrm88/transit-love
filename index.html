@@ -25,7 +25,7 @@
   --glass-2:rgba(255,255,255,.94);
   --shadow:0 10px 28px rgba(120,66,90,.16);
   --shadow-lg:0 18px 44px rgba(120,66,90,.22);
-  --serif:"Nanum Myeongjo","AppleMyungjo","Times New Roman",Georgia,serif;
+  --serif:"KoPub Batang","Nanum Myeongjo","AppleMyungjo",serif;
   --dlg-min:172px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -34,7 +34,7 @@ html{background:#0d0a0c}
 body{
   background:#0d0a0c;
   color:#2b2528;
-  font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-family:"SUIT","Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   font-size:15px;line-height:1.65;letter-spacing:-.012em;
   -webkit-font-smoothing:antialiased;
   display:flex;justify-content:center;
@@ -96,7 +96,7 @@ button{font-family:inherit;cursor:pointer}
 .hud-day{
   flex:0 0 auto;padding:0;height:auto;display:inline-flex;align-items:center;
   background:none;box-shadow:none;border:0;
-  color:#d93b60;font-family:var(--serif);font-size:12.5px;font-weight:700;letter-spacing:.13em;
+  color:#68aeda;font-family:var(--serif);font-size:12.5px;font-weight:700;letter-spacing:.13em;
 }
 .hud-sep{flex:0 0 auto;width:1px;height:13px;background:rgba(120,80,100,.20)}
 #hud-time{flex:0 0 auto;font-size:11.5px;font-weight:700;color:#7c6b74}
@@ -122,9 +122,9 @@ button{font-family:inherit;cursor:pointer}
 
 /* ---------------- 좌측 세로 메뉴 ---------------- */
 #menu{
-  position:absolute;left:10px;top:calc(env(safe-area-inset-top,0px) + 62px);
-  z-index:29;display:flex;flex-direction:column;align-items:center;gap:1px;
-  padding:7px 3px;border-radius:26px;
+  position:absolute;left:12px;right:12px;top:calc(env(safe-area-inset-top,0px) + 60px);
+  z-index:29;display:flex;flex-direction:row;align-items:center;justify-content:space-around;gap:4px;
+  padding:4px 7px;border-radius:20px;
   background:rgba(255,251,250,.78);
   -webkit-backdrop-filter:blur(16px) saturate(1.12);backdrop-filter:blur(16px) saturate(1.12);
   border:1px solid rgba(255,255,255,.5);
@@ -132,9 +132,9 @@ button{font-family:inherit;cursor:pointer}
 }
 .menu-chip{
   position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-  width:52px;padding:9px 0 8px;border:0;border-radius:18px;
+  flex:1;min-width:0;width:auto;padding:7px 2px 6px;border:0;border-radius:14px;
   background:none;box-shadow:none;
-  color:#7d6a73;font-size:8.5px;font-weight:800;letter-spacing:-.03em;
+  color:#7d6a73;font-size:9px;font-weight:800;letter-spacing:-.03em;
   transition:.15s;
 }
 .menu-chip svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
@@ -354,7 +354,7 @@ button{font-family:inherit;cursor:pointer}
 
 /* ---------------- 캐릭터 스탠딩 ---------------- */
 #figurewrap{
-  position:absolute;left:0;right:0;bottom:clamp(112px,13.6dvh,144px);z-index:10;
+  position:absolute;left:0;right:0;bottom:clamp(178px,22dvh,224px);z-index:10;
   display:flex;justify-content:center;pointer-events:none;
   transition:opacity .2s ease;
 }
@@ -380,8 +380,8 @@ button{font-family:inherit;cursor:pointer}
 }
 #vn-figure .mono{width:120px;height:120px;font-size:44px;align-self:center}
 @media (max-height:720px){
-  #vn-figure{height:clamp(380px,54dvh,470px)}
-  #figurewrap{bottom:clamp(104px,12.6dvh,132px)}
+  #vn-figure{height:clamp(410px,60dvh,540px)}
+  #figurewrap{bottom:clamp(158px,20dvh,190px)}
 }
 
 /* ---------------- 하단 영역 ---------------- */
@@ -3005,12 +3005,12 @@ var XTENSION = {
 
 /* 현관에서 처음 마주칠 때 — 이름부터 밝힌다 (규칙: 이름·나이·직업은 공개, 누구의 X인지만 비밀) */
 var ARRIVE_INTRO = {
-  riku: { t: 'say', who: 'riku', text: '"마에다 리쿠예요. 사진 찍는 일 해요." (…끝인가 싶었는데, 한 박자 뒤에) "웃지 마세요. 진짜로 찍어요." (입꼬리가 아주 조금 올라갔다. 무뚝뚝한 게 아니라, 웃음을 아끼는 쪽이었다.)' },
-  sion: { t: 'say', who: 'sion', text: '"오시온이에요. 집 짓는 일 해요. …짐은 제가 들게요. 계단이 좁아서요." (말이 끝나기 전에 벌써 손이 나가 있었다. 말보다 손이 빠른 사람.)' },
-  yushi: { t: 'say', who: 'yushi', text: '"토쿠노 유우시예요. 소리 만드는 일 해요." (거기서 끝난 줄 알았는데, 조금 뒤에) "…여기, 물소리 좋네요." (그게 오늘 제일 긴 문장이었다.)' },
+  riku: { t: 'say', who: 'riku', text: '"마에다 리쿠예요. 패션 매거진 사진 찍어요. 잘 부탁해요."' },
+  sion: { t: 'say', who: 'sion', text: '"오시온이에요. 건축 디자이너로 일해요. 짐 무거우면 제가 들게요."' },
+  yushi: { t: 'say', who: 'yushi', text: '"토쿠노 유우시예요. 사운드 디자인 일을 해요. 잘 부탁해요."' },
   jaehee: { t: 'say', who: 'jaehee', text: '"김대영이에요! 노래 만들어요. 아, 여기선 이름부터 말하는 거죠? 잘 부탁해요!" (혼자 먼저 웃었다. 그 웃음에 다들 같이 웃었다.)' },
-  ryo: { t: 'say', who: 'ryo', text: '"히로세 료예요. 옷 가게 해요. 반갑습니다!" (눈치가 빨라서 인사도 빨랐다.)' },
-  sakuya: { t: 'say', who: 'sakuya', text: '"후지나가 사쿠야예요. 빵 만들고, 디저트도 만들어요. 아침에 먹을 거 제가 준비할게요. …진짜 잘해요." (마지막 말이 제일 진지했다.)' }
+  ryo: { t: 'say', who: 'ryo', text: '"히로세 료예요. 빈티지 샵 운영해요. 편하게 료라고 불러요."' },
+  sakuya: { t: 'say', who: 'sakuya', text: '"후지나가 사쿠야예요. 파티시에로 일해요. 아침에 디저트 만들어 올게요."' }
 };
 
 /* 자기소개 시간 — 이름은 이미 아니까, 나이 · 하는 일 · 첫인상 */
@@ -3043,32 +3043,32 @@ var XINTRO = {
 
 /* 서연이 돌리는 첫인상 · 연애 스타일 이야기 */
 var STYLE_TALK = [
-  { t: 'say', who: 'seoyeon', text: '"첫날이니까 한 명씩 자기 얘기 좀 하자. 연애할 때 어떤 사람인지. 나는 좋으면 바로 말하는 쪽. 대신 금방 식은 적도 있어."' },
-  { t: 'say', who: 'chaewon', text: '"나는… 좋다는 말 자주 하는 편이야. 안 하면 후회할 것 같아서."' },
-  { t: 'say', who: 'jiwoo', text: '"말이 느린 편이야. 대신 한 번 한 말은 안 바꿔." (지우가 작게 말했다. 그게 다였다.)' },
+  { t: 'say', who: 'seoyeon', text: '"우리 연애 얘기 조금 해 볼까? 나는 마음에 들면 먼저 표현하는 편이야. 대신 확신이 없으면 오래 못 가더라."' },
+  { t: 'say', who: 'chaewon', text: '"나는 좋아하면 티가 많이 나. 연락도 먼저 하고, 보고 싶으면 보고 싶다고 해."' },
+  { t: 'say', who: 'jiwoo', text: '"나는 말이 좀 느려. 대신 쉽게 약속하지 않고, 한 말은 지키려고 해."' },
 
-  { t: 'say', who: 'sion', text: '"나는 준비를 많이 해. 말은 잘 못 하고. 물 떠 놓고, 우산 챙겨 놓고, 그런 걸로 마음을 대신해."' },
-  { t: 'say', who: 'seoyeon', text: '"그거, 받는 사람 입장에서는 좀 답답할 수 있어. 말이 없으면 모르니까."' },
+  { t: 'say', who: 'sion', text: '"나는 말보다 챙기는 쪽이 편해. 필요한 거 기억해 뒀다가 먼저 해 놓는 편이야."' },
+  { t: 'say', who: 'seoyeon', text: '"근데 상대는 모를 수도 있잖아. 가끔은 말로 확인해 주는 것도 필요해."' },
   { t: 'say', who: 'sion', text: '"…그런 말, 들은 적 있어." (그가 고개를 끄덕였다. 부정하지 않았다.)' },
 
-  { t: 'say', who: 'riku', text: '"나는 보는 쪽. 좋아하는 것도 다 기억해 두고, 말은 나중에 해."' },
-  { t: 'say', who: 'seoyeon', text: '"그 나중에가 문제지. 그 나중에가 얼마나 긴데."' },
-  { t: 'say', who: 'riku', text: '"…알아. 고치려고 여기 온 거야." (짧게 웃었다. 웃을 때 눈은 안 웃었다.)' },
+  { t: 'say', who: 'riku', text: '"나는 상대를 오래 보는 편이야. 좋아하는 것도 잘 기억하고. 표현은 좀 늦지만."' },
+  { t: 'say', who: 'seoyeon', text: '"그럼 상대가 기다리는 시간도 생각해야겠다."' },
+  { t: 'say', who: 'riku', text: '"알아. 나도 그 부분은 바꾸고 싶어."' },
 
-  { t: 'say', who: 'yushi', text: '"말이 느려. 마음은 먼저 가 있는데 문장이 안 나와. 그래서 자꾸 다른 걸로 대신해."' },
-  { t: 'say', who: 'seoyeon', text: '"다른 걸로? 노래 같은 거?"' },
-  { t: 'say', who: 'yushi', text: '"…응. 노래 같은 거." (이어폰을 만지작거렸다. 뭘 말하고 싶을 때 나오는 버릇이다.)' },
+  { t: 'say', who: 'yushi', text: '"마음은 빨리 움직이는데 말로 설명하는 건 느려. 그래서 행동으로 먼저 보여 주는 편이야."' },
+  { t: 'say', who: 'seoyeon', text: '"다른 걸로? 행동으로 보여 주는 편이야?"' },
+  { t: 'say', who: 'yushi', text: '"…응. 말보다 행동이 편해. 그래도 이번엔 말해 보려고."' },
 
-  { t: 'say', who: 'jaehee', text: '"나는 다 말해! 좋을 때도, 힘들 때도. 근데 그게 상대한테는 무거울 수 있대. 나중에 알았어."' },
-  { t: 'say', who: 'seoyeon', text: '"솔직한 거랑 배려 없는 건 종이 한 장 차이야."' },
-  { t: 'say', who: 'jaehee', text: '"…그 한 장이 어려워." (그가 조금 걱정스러운 얼굴로 말했다. 진짜로 걱정하는 얼굴이었다.)' },
+  { t: 'say', who: 'jaehee', text: '"나는 감정을 바로 말하는 편이야. 근데 상대가 생각할 시간도 필요하다는 걸 늦게 배웠어."' },
+  { t: 'say', who: 'seoyeon', text: '"솔직한 건 좋은데, 상대가 받아들일 여유도 같이 봐 줘야지."' },
+  { t: 'say', who: 'jaehee', text: '"맞아. 그걸 잘하고 싶어. 나도 노력 중이야."' },
 
-  { t: 'say', who: 'ryo', text: '"나는 웃으면서 말해. 진지한 말도. 그래서 가끔 못 믿겠다는 소리 들어."' },
-  { t: 'say', who: 'seoyeon', text: '"그건 네가 웃음을 방패로 쓰는 거지."' },
+  { t: 'say', who: 'ryo', text: '"나는 장난을 많이 쳐. 진지해지면 괜히 민망해서 웃어 버리거든."' },
+  { t: 'say', who: 'seoyeon', text: '"웃으면 편하긴 하지. 근데 진심일 때는 상대가 알아듣게 말해 줘."' },
   { t: 'say', who: 'ryo', text: '"…누나, 너무 정확하게 맞히지 마." (그가 웃었다. 오늘은 그 웃음이 조금 얇았다.)' },
 
-  { t: 'say', who: 'sakuya', text: '"나는 정하는 걸 잘 못 해. 뭐 먹을지도, 어디 갈지도. 대신 좋아하는 건 오래 좋아해."' },
-  { t: 'say', who: 'seoyeon', text: '"그거 편한 사랑이야. 상대가 다 정해 주면 고맙긴 한데, 혼자 짊어지게 되거든."' },
+  { t: 'say', who: 'sakuya', text: '"나는 선택하는 데 시간이 걸려. 그래도 한 번 마음을 정하면 오래 가는 편이야."' },
+  { t: 'say', who: 'seoyeon', text: '"상대가 계속 정하게 두면 지칠 수도 있어. 네 마음도 네가 말해 줘야지."' },
   { t: 'say', who: 'sakuya', text: '"…그건 생각 못 해 봤어." (그가 조금 긴장한 얼굴로 고개를 끄덕였다.)' },
 
   { t: 'say', who: 'seoyeon', text: '"자, 다들 자기 얘기 하는 건 잘하는데. 정작 중요한 건 안 말하지?"' }
@@ -3084,7 +3084,7 @@ var STYLE_ME = [
 
 /* 이야기 뒤, X의 반응 */
 var STYLE_XREACT = {
-  riku: { t: 'narr', w: 'riku', text: '(리쿠가 물컵을 내려놓았다.) "…나 저 말, 들을 때마다 좀 아파. 고치려고 온 건데, 고치는 게 이렇게 어려워." (그리고 아주 작게.) "…네 앞에서는 안 그러고 싶은데."' },
+  riku: { t: 'say', who: 'riku', text: '"나도 알아. 바꾸고 싶은데 생각처럼 잘 안 돼. 그래도 이번엔 네가 말할 때 피하지 않을게."' },
   sion: { t: 'narr', w: 'sion', text: '(시온이 한참 자기 손을 내려다봤다. 그리고 낮게.) "준비만 하다가 끝나는 사람. …그 말, 어디서 들은 것 같아. 그때는 안 들었는데. 이번엔 들을게." (그가 컵을 고쳐 잡았다.)' },
   yushi: { t: 'narr', w: 'yushi', text: '(유우시가 이어폰을 뺐다. 이 집에 온 뒤로 처음으로, 두 쪽 다.) "…나도 이제는 문장으로 말해 볼게. 잘 안 되더라도."' },
   jaehee: { t: 'narr', w: 'jaehee', text: '(대영이 아무 말 없이 물을 따라 주었다. 넘칠 뻔했다. 그가 놀라서 컵을 내려놓았다.) "…미안. 손이 떨렸어."' },
@@ -3562,7 +3562,7 @@ function stagePhoto(id) {
 }
 function figureHTML(id) {
   var src = stagePhoto(id);
-  if (src) return '<img class="face-img" src="' + src + '" alt="">';
+  if (src) return '<span class="figure-cutout"><i class="figure-sleeve sleeve-left"></i><i class="figure-sleeve sleeve-right"></i><img class="face-img" src="' + src + '" alt=""></span>';
   return monoHTML(id);
 }
 
@@ -3817,7 +3817,7 @@ function scheduleAuto() {
   autoTimer = setTimeout(function () {
     autoTimer = null;
     if (autoTimer === null && AUTO && typeof advance === 'function') advance();
-  }, 1500);
+  }, 2850);
 }
 function cancelAuto() {
   if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
@@ -4202,14 +4202,14 @@ function renderInbox() {
 /* ---------- 미니게임 (Day2 가위바위보 / Day4 참참참) ---------- */
 var MG_CONF = {
   rps: {
-    title: '데이트 지목권', sub: '3판 2선승 · 가위바위보',
+    title: '데이트 지목권', sub: '3판 2선승 · 상대의 선택을 읽어 보기',
     labels: ['가위', '바위', '보'], icons: ['✌️', '✊', '🖐️'],
-    guide: '먼저 2승을 따내면 지목권을 가져갑니다.'
+    guide: '상대의 표정을 보고 골라 봐요. 먼저 2승을 하면 지목권을 가져갑니다.'
   },
   cham: {
-    title: '2차 데이트 지목권', sub: '3판 2선승 · 참참참',
+    title: '2차 데이트 지목권', sub: '3판 2선승 · 눈치 싸움',
     labels: ['왼쪽', '위', '오른쪽'], icons: ['👈', '👆', '👉'],
-    guide: '상대가 내미는 손과 같은 방향을 누르면 이깁니다.'
+    guide: '상대가 시선을 돌릴 방향을 예측해 보세요. 맞히면 1승입니다.'
   }
 };
 /* 가위바위보 판정: 0 가위 · 1 바위 · 2 보 */
@@ -4374,8 +4374,8 @@ function catMaleFor(xId) {
 }
 function newState() {
   var aff = {};
-  MEMBERS.forEach(function (m) { aff[m.id] = 18; });
-  aff[START.xId] = 24;
+  MEMBERS.forEach(function (m) { aff[m.id] = 14; });
+  aff[START.xId] = 21;
   return {
     name: START.name || '당신',
     gender: 'female',
@@ -4432,6 +4432,18 @@ function jobNote() {
   return '이 집에 온 이유: 잊으러 왔다.';
 }
 
+/* ---------- 숨겨진 관계 성향 ---------- */
+/* 생년월일에서 연상한 성격 결은 내부 연출에만 사용한다. 게임 화면에는 사주·별자리 정보로 노출하지 않는다. */
+var HIDDEN_TEMPERAMENT = {
+  riku:   { style: 'avoidant', pursue: 0.82, jealousy: 0.72, needSpace: true },
+  sion:   { style: 'secure',   pursue: 0.94, jealousy: 0.34, needSpace: false },
+  yushi:  { style: 'avoidant', pursue: 0.76, jealousy: 0.48, needSpace: true },
+  jaehee: { style: 'anxious',  pursue: 1.08, jealousy: 0.88, needSpace: false },
+  ryo:    { style: 'anxious',  pursue: 0.98, jealousy: 0.79, needSpace: true },
+  sakuya: { style: 'anxious',  pursue: 0.92, jealousy: 0.67, needSpace: false }
+};
+function hiddenTemperament(id) { return HIDDEN_TEMPERAMENT[id] || { style: 'secure', pursue: 1, jealousy: .4, needSpace: false }; }
+
 /* ---------- 호감도 ---------- */
 var quietAff = false;
 function affUp(id, v) {
@@ -4462,12 +4474,12 @@ function typeInto(el, text, cb) {
   }
   el.textContent = '';
   typing = { el: el, text: text, i: 0, cb: cb };
-  typing.timer = setInterval(tickType, 16);
+  typing.timer = setInterval(tickType, 28);
   scrollStage();
 }
 function tickType() {
   if (!typing) return;
-  typing.i += 3;
+  typing.i += 1;
   typing.el.textContent = typing.text.slice(0, typing.i);
   if (typing.i >= typing.text.length) { finishType(); return; }
   scrollStage();
@@ -4742,6 +4754,11 @@ function showChoice(node) {
     opts: order.map(function (o) { return { label: fmt(o.label) }; })
   }, function (picked, idx) {
     var o = order[idx] || order[0];
+    var rude = /무시|짜증|귀찮|알아서|상관없|됐어|그만해|왜 그래|재미없|신경 꺼|싫거든/.test(String(o.label || ''));
+    if (rude) {
+      var target = (o.eff && Object.keys(o.eff).filter(function(k){ return k !== 'x'; })[0]) || 'x';
+      affUp(target, -3);
+    }
     if (o.mine) {
       quietAff = true;
       applyEff(o.eff);
@@ -5323,11 +5340,35 @@ function startDay2Date(id, via) {
     rest.push(N('(' + withJosa(m.call, '이', '가') + ' 앞장섰다. 지목권은 자기 주머니에 넣었다. 하루 종일 꺼내 볼 사람처럼.)'));
   }
   DATES[id].forEach(function (n) { rest.push(n); });
-  affUp(id, 5);                                  /* 데이트를 끝까지 함께한 몫 */
+  affUp(id, 4);                                  /* 데이트를 끝까지 함께한 몫 */
   rest.push(L('night', '하우스 · 현관'));
   rest.push(RETURN[id]);
   if (id !== x) {
     rest.push(L('house', '하우스 · 거실'));
+    if (S.aff[x] >= 38) {
+      var ht = hiddenTemperament(x);
+      var jealousyLines = {
+        riku: '"오늘 누구랑 있었는지 묻진 않을게. 다만 네가 웃는 소리가 거실까지 들리더라."',
+        sion: '"즐거웠으면 됐어. 그런데 나도 네 얘기 조금은 듣고 싶었어."',
+        yushi: '"오늘 네가 다른 사람이랑 있는 거 봤어. 괜찮다고 생각했는데, 생각보다 신경 쓰였어."',
+        jaehee: '"나 오늘 좀 질투했어. 티 안 내려고 했는데 잘 안 되네. 네가 누구 만날지는 네 마음인데도."',
+        ryo: '"데이트 재밌었어? 아, 표정 보니까 대답 안 해도 알겠다. 나 지금 좀 유치하지."',
+        sakuya: '"오늘 네 옆자리가 비어 있는 걸 계속 봤어. 다음엔 나도 같이 있고 싶어."'
+      };
+      if (ht.jealousy >= .65) {
+        rest.push(SAY(x, jealousyLines[x]));
+      } else {
+        var calmLines = {
+          riku: '"오늘 재밌었어? 네가 먼저 말해 주면 들을게."',
+          sion: '"잘 다녀왔어? 피곤하면 쉬어. 네 얘기는 나중에 들어도 돼."',
+          yushi: '"오늘 어땠어? 궁금하긴 한데, 지금 말하기 싫으면 안 해도 돼."',
+          jaehee: '"나도 오늘 네 얘기 듣고 싶었어. 다음엔 나랑도 시간 보내 줘."',
+          ryo: '"오늘 재밌었나 보네. 나중에 나랑도 가자. 이번엔 내가 고를게."',
+          sakuya: '"오늘 어땠는지 궁금해. 네가 편할 때 얘기해 줘."'
+        };
+        rest.push(SAY(x, calmLines[x]));
+      }
+    }
     rest.push(XTENSION[x]);
     rest.push(SAY(x, XDATA[x].d2));
     rest.push({
@@ -5728,7 +5769,7 @@ function d4DateWith(id) {
       var l = locs[id] || ['date', '서울 어딘가'];
       rest.push(L(l[0], l[1]));
       DATES4[id].forEach(function (n) { rest.push(n); });
-      affUp(id, 4);
+      affUp(id, 3);
       rest.push(L('house', '하우스 · 현관'));
       rest.push(S.flags.xWentSua ? CAT_POKE_BACK[0] : CAT_POKE[0]);
       rest.push(S.flags.xWentSua ? CAT_POKE_BACK[1] : CAT_POKE[1]);
