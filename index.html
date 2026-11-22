@@ -1039,7 +1039,7 @@ button{font-family:inherit;cursor:pointer}
 .mbtn:active{transform:translateY(1px)}
 .menu-note{font-size:10px;color:#c0a8b2;line-height:1.7;text-align:center;margin:10px 0 0}
 
-/* ---------------- 시그널함 ---------------- */
+/* ---------------- 메세지함 ---------------- */
 .sh-title{display:flex;flex-direction:column;gap:3px}
 .sh-kicker{font-size:8px;font-weight:800;letter-spacing:.26em;color:#dda3b6;text-indent:.02em}
 .sh-title h2::before{display:none}
@@ -1102,6 +1102,72 @@ button{font-family:inherit;cursor:pointer}
   margin:14px 4px 4px;text-align:center;font-size:10px;color:#bda5af;
   background:#fbf3f1;border-radius:999px;padding:9px 12px;
 }
+
+/* ===== 리뉴얼 보정: 차가운 블루 톤 · 정보 칩 · 스탠딩 크기 ===== */
+:root{
+ --rose:#4d83b8;--rose-deep:#315f91;--rose-hi:#91b8dc;--rose-soft:#e5f0fa;
+ --cream:#f7fbff;--cream-2:#edf5fc;--ink:#1e2b3a;--ink-soft:#50657b;
+ --muted:#8195a9;--line:rgba(74,130,185,.18);--line-2:rgba(80,120,160,.12);
+ --glass:rgba(248,252,255,.9);--glass-2:rgba(252,254,255,.96);
+ --shadow:0 10px 28px rgba(35,75,115,.14);--shadow-lg:0 18px 44px rgba(35,75,115,.2);
+}
+body,#app,#bgwrap{background-color:#101a28}
+#app{background:#eaf2fa}
+.hud-pill{border-radius:13px;background:rgba(242,248,255,.9);border:1px solid rgba(255,255,255,.8)}
+.hud-day{background:#dceafa;border:1px solid #bfd5ed;border-radius:7px;padding:5px 8px;color:#315f91;font-size:11px;letter-spacing:.06em}
+#hud-place{background:#e6eef8;border:1px solid #cbdced;border-radius:7px;padding:5px 8px;color:#365675}
+.hud-heart{background:#e4effb;color:#376d9e;border-radius:7px}
+#figurewrap{bottom:clamp(164px,19dvh,190px)}
+#vn-figure{height:clamp(300px,43dvh,390px);filter:drop-shadow(0 14px 24px rgba(22,45,70,.28))}
+#vn-figure img{max-height:100%;width:auto;object-fit:contain;object-position:50% 100%}
+.figure-cutout{position:relative;display:block;height:100%;width:auto;max-width:100%;isolation:isolate;aspect-ratio:420/640}
+.figure-cutout::before{content:"";position:absolute;z-index:0;left:18%;right:18%;top:72%;bottom:-1%;background:linear-gradient(145deg,#dceafa,#8fb3d8 78%,#6f99c1);border-radius:34% 34% 8% 8% / 18% 18% 0 0;box-shadow:inset 0 2px 0 rgba(255,255,255,.35)}
+.figure-cutout .face-img{position:relative;z-index:2;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:50% 0;display:block;clip-path:polygon(50% 0%,62% 2%,75% 9%,86% 19%,94% 32%,95% 43%,90% 53%,82% 61%,73% 67%,68% 72%,68% 79%,32% 79%,32% 72%,27% 67%,18% 61%,10% 53%,5% 43%,6% 32%,14% 19%,25% 9%,38% 2%)}
+.figure-cutout .figure-sleeve{position:absolute;z-index:1;display:block;top:68%;width:20%;height:34%;background:linear-gradient(155deg,#dceafa,#8fb3d8 80%);border-radius:45% 45% 34% 34%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.figure-cutout .sleeve-left{left:5%;transform:rotate(15deg)}
+.figure-cutout .sleeve-right{right:5%;transform:rotate(-15deg)}
+#stage{top:calc(env(safe-area-inset-top,0px) + 116px)}
+.memcard{width:82px;padding:4px 4px 6px;box-shadow:0 8px 18px rgba(30,55,85,.22)}
+.memcard-cap{font-size:7px}
+.xcard .xph{aspect-ratio:1/1.12}
+.xgallery{gap:7px}
+.xcard{border-color:rgba(80,135,190,.26);background:linear-gradient(180deg,#fbfdff,#eaf3fc)}
+.xcard.on{border-color:#4d83b8;background:#eaf3fc;box-shadow:0 7px 16px rgba(55,110,165,.18)}
+.xcard.on::after{background:#477eaf}
+.btn-primary,.btn-send{background:linear-gradient(180deg,#6ea3d2,#3f78ad 62%,#315f91);box-shadow:0 10px 22px rgba(45,95,145,.28)}
+.choice{color:#315f91;border-color:rgba(105,155,200,.45)}
+.choice .cmk{background:#e2eef9;color:#376d9e}
+#dlgcard{background:rgba(249,252,255,.95);box-shadow:0 16px 34px rgba(25,50,80,.22)}
+#dlgbadge{background:linear-gradient(180deg,#578fc2,#356c9f);box-shadow:0 7px 16px rgba(45,95,145,.28)}
+#dlgtext em{color:#315f91}
+#dlgcard.is-msg #dlgtext{background:linear-gradient(180deg,#eef5fc,#e5eff9);border-color:rgba(130,170,210,.45);color:#3c5873}
+.panel,.sheet-inner{background:rgba(248,252,255,.98)}
+.panel-head h3::before,.sheet-head h2::before{background:#78a8d2}
+.panel-x,.sheet-close{background:#e8f1fa;color:#4e79a2}
+.pickcard.sel,.fpick.sel,.ncard.sel{border-color:#4d83b8;background:#f0f6fc}
+.affbar{background:#e2edf7}.affbar i{background:linear-gradient(90deg,#a9c8e5,#4d83b8)}
+.daycard{background:rgba(226,239,251,.62)}
+.daycard .dc-card{box-shadow:0 18px 42px rgba(35,75,115,.2)}
+.daycard .dc-day,.dex-count{color:#3f78ad}
+.end-hero{background:radial-gradient(120% 90% at 50% 0%,#fff 0%,#f3f8fd 46%,#e4effa 100%);border-color:#c9dced}
+.end-title{color:#315f91}.end-quote{background:#edf5fc;border-left-color:#79a8d1;color:#456989}
+.dex-lead{background:linear-gradient(120deg,#eef5fc,#e3effa);border-color:#cbdced}
+.dex-lead .dl-t{color:#315f91}
+.xr-chip{background:#edf5fc;border-color:#cbdced;color:#416f9b}
+.xr-item{border-color:#d1e1f0;background:linear-gradient(180deg,#fff,#f2f7fc)}
+.xr-letter{background:repeating-linear-gradient(180deg,transparent 0 29px,rgba(110,155,195,.13) 29px 30px),linear-gradient(180deg,#fff,#f2f7fc);border-color:#d1e1f0}
+.toast{border-color:#c6d9ec;color:#3f668a}.toast.down{border-color:#b9c8dc;color:#63768b}
+#mgcard .mg-panel{background:#f8fbff;border-color:#d6e4f1}
+#mgcard .mg-kicker{color:#3f78ad}
+#mgcard .mg-stage{background:linear-gradient(180deg,#eef5fc,#e2edf8);border-color:#cbdced}
+#mgcard .mg-btn{border-color:#c5d9ec;color:#3f6f9d}
+.menu-block{border-color:#d3e2ef}
+.menu-block h4{color:#416f9b}
+.mbtn.danger{border-color:#a8c5e0;color:#315f91}
+/* D-Day / 장소는 둥근 알약 대신 또렷한 사각 정보표 */
+#hud-day,#hud-place{border-radius:6px}
+@media (max-height:720px){#vn-figure{height:clamp(280px,42dvh,350px)}#figurewrap{bottom:clamp(150px,18dvh,175px)}}
+
 </style>
 </head>
 <body>
@@ -1163,16 +1229,14 @@ button{font-family:inherit;cursor:pointer}
 
     <header id="topbar">
       <div class="hud-pill">
-        <span class="hud-day" id="hud-day">DAY 01</span>
+        <span class="hud-day" id="hud-day">D-DAY 01</span>
         <i class="hud-sep"></i>
         <span id="hud-time">낮</span>
         <i class="hud-sep"></i>
         <span id="hud-place">하우스 · 거실</span>
         <span class="hud-heart" id="hud-aff">🎫 0</span>
       </div>
-      <button class="hud-round" id="btn-menu" aria-label="설정">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2.1"/><circle cx="9" cy="16" r="2.1"/></svg>
-      </button>
+
     </header>
 
     <nav id="menu" aria-label="메뉴">
@@ -1182,7 +1246,7 @@ button{font-family:inherit;cursor:pointer}
       </button>
       <button class="menu-chip" id="btn-inbox">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10.5H4z"/><path d="M4 7.6l8 5.6 8-5.6"/></svg>
-        <span>시그널함</span>
+        <span>메세지함</span>
         <i id="inbox-dot" class="chip-dot" hidden></i>
       </button>
       <button class="menu-chip" id="btn-log">
@@ -1254,7 +1318,7 @@ button{font-family:inherit;cursor:pointer}
 <div class="sheet" id="sheet-inbox" aria-hidden="true">
   <div class="sheet-inner">
     <div class="sheet-head sh-inbox">
-      <div class="sh-title"><div class="sh-kicker">LOVE LETTERS</div><h2>시그널함</h2></div>
+      <div class="sh-title"><div class="sh-kicker">LOVE LETTERS</div><h2>메세지함</h2></div>
       <button class="sheet-close" data-close="sheet-inbox" type="button">닫기</button>
     </div>
     <div class="sheet-body" id="inbox-body"></div>
@@ -1283,16 +1347,6 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </div>
 
-<div class="sheet" id="sheet-menu" aria-hidden="true">
-  <div class="sheet-inner">
-    <div class="sheet-grip"></div>
-    <div class="sheet-head">
-      <div class="sh-title"><div class="sh-kicker">SETTINGS</div><h2>설정</h2></div>
-      <button class="sheet-close" data-close="sheet-menu" type="button">닫기</button>
-    </div>
-    <div class="sheet-body" id="menu-body"></div>
-  </div>
-</div>
 
 <div class="sheet" id="sheet-final" aria-hidden="true">
   <div class="sheet-inner">
@@ -1480,14 +1534,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 낡은 카메라가 놓여 있었다. 렌즈가 문 쪽을 향해 있었다. 누가 그렇게 두고 갔는지 알 것 같아서, 문을 닫고 한참 서 있었다.',
     itemDesc: '리쿠가 {M} 동안 쓴 카메라. 필름은 다 썼는데 마지막 한 장만 현상하지 않았다. 옆에 붙은 메모에는 날짜만 있다. 헤어지기 하루 전. 그날 리쿠는 이 집에 오는 길에 카메라를 처음으로 두고 나왔다.',
     letter: [
-      '이 편지 쓰려고 사진 폴더를 세 번 열었다가 세 번 다 닫았어. 네 얼굴 나온 컷이 마지막에서 여덟 번째에 있어. 지우려고 눌렀다가 취소했어. 취소한 이유를 적어 두려고 지금 펜을 들었어.',
-      '우리 헤어진 날, 나는 카메라를 안 가져갔어. 그날만. 그래서 그날은 사진이 없어. 기억에만 있어. 이상하게 그게 제일 선명해.',
-      '너는 내 사진에 자주 나왔는데, 정작 내 사진은 한 장도 없지. 너는 늘 나도 찍어 달라고 했고, 나는 늘 다음에라고 했어. 그 다음에는 {M}이 걸렸어.',
-      '네가 자주 두고 가던 머리끈, 나 아직 세 개 있어. 카메라 가방 앞주머니에 하나, 코트 주머니에 하나, 차 안에 하나. 주우면 버리질 못했어. 그냥. 그게 다야.',
-      '너는 나를 사진으로만 본다고 했지. 그땐 이해 못 했어. 지금은 알아. 나는 항상 뒤에 있었고 너는 항상 앞에 있었어. 같은 곳을 보고 있지 않았던 거야. 사랑이 없어서가 아니라, 방향이 달라서.',
-      '마지막 한 장은 안 현상할게. 현상하면 그날이 끝나 버릴 것 같아서.',
-      '대신 다음에 찍는 사진은 내가 앞에 서 볼게. 네가 뒤에서 찍어 줘. 그럼 이번엔 내가 긴장할 거야.',
-      '— 리쿠'
+      '이 편지를 쓰려고 사진을 몇 장이나 다시 봤어. 네가 나온 사진은 생각보다 많더라. 그중에 흔들린 사진도 그대로 뒀어. 그때는 왜 이런 걸 찍었나 싶었는데, 지금 보니까 그날 우리가 얼마나 편했는지 남아 있더라.',
+      '헤어지기 전날에도 사진을 찍자고 했지. 나는 다음에 찍자고 했어. 별생각 없이 한 말이었는데, 그 다음이 오지 않을 수도 있다는 걸 생각하지 못했어.',
+      '네가 서운하다고 했을 때도 나는 제대로 대답하지 않았어. 말하면 어색해질까 봐 카메라부터 들었지. 네가 원하는 건 사진이 아니라 내 얼굴을 보고 하는 대답이었을 텐데.',
+      '네가 두고 간 머리끈은 아직 하나 있어. 특별한 의미를 붙이려고 남긴 건 아니야. 버리려다가 그냥 못 버렸어. 그게 내 솔직한 마음이야.',
+      '다시 만나면 예전처럼 아무렇지 않은 척하지 않을게. 모르는 척하는 게 너한테 얼마나 무례한지도 이제 알아.',
+      '이 편지를 읽고 당장 답을 정하지 않아도 돼. 다만 이번에는 내가 먼저 얘기하고 싶었어.',
+      '— 리쿠',
     ],
     door: '"그 카메라, 아직 있어?" (X룸 문 앞에서 그가 물었다. 대답 들을 준비가 안 된 얼굴로.)',
     night: [
@@ -1511,14 +1564,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 도면이 펼쳐져 있었다. 귀퉁이가 손때로 조금 닳아 있었다. 펼친 사람이 아주 여러 번 만졌다는 뜻이었다.',
     itemDesc: 'A3 도면 한 장. 현관이 좁고 부엌이 넓고 창이 두 개다. 하나는 아침, 하나는 저녁. 뒷면을 뒤집으면 연필로 그린 작은 집이 있다. 현관 앞에 신발 두 켤레. 지웠다가 다시 그린 자국이 세 번쯤 남아 있다.',
     letter: [
-      '이 방 열쇠를 받고 제일 먼저 한 일이 이 도면을 꺼내는 거였어. 여기 있을 거라고 생각했어. 어디에 두든 내가 찾을 것 같아서.',
-      '{M} 전에 그린 집이야. 현관이 좁고, 부엌이 넓고, 창이 두 개. 하나는 아침, 하나는 저녁.',
-      '뒷면을 보면 연필로 그린 그림이 있어. 현관 앞에 신발 두 켤레. 그 위에 지우개 자국이 있지. 지웠다가 다시 그렸어. 세 번쯤.',
-      '허가는 안 났어. 신청을 안 했으니까. 늘 그랬지. 나는 준비만 하고 말은 안 했어. 나중에, 나중에, 나중에. 너는 그 나중을 기다리다 지친 거야. 그때는 몰랐어. 아니, 알았는데 외면했어.',
-      '내가 너를 챙긴 방식은 늘 그랬어. 물을 데워 놓고, 우산을 문 옆에 세워 두고, 잠긴 창을 확인하고. 네가 원한 건 그게 아니라 좋아한다는 말 한마디였는데, 나는 그걸 하루 미루고 또 하루 미뤘어. 말하면 다 끝날 것 같았거든. 말하지 않으면 영원히 시작도 안 하는 건데.',
-      '이 집에서 네가 다른 사람 앞에서 웃는 걸 봤어. 좋은 얼굴이더라. 내가 만들지 못한 얼굴. 그게 제일 아팠어.',
-      '도면은 여기 두고 갈게. 버려도 돼. 다만 한 가지만. 현관 신발 두 켤레는 지우개로 지우지 않았어. 그건 마지막까지 못 지운 거야.',
-      '— 시온'
+      '예전에 우리가 살 집을 상상하면서 도면을 그린 적이 있어. 네가 부엌은 넓었으면 좋겠다고 했고, 나는 창문이 많았으면 좋겠다고 했지. 별것 아닌 얘기였는데 나는 그걸 꽤 오래 기억하고 있었어.',
+      '그런데 정작 중요한 얘기는 늘 미뤘어. 바쁘다는 말로 넘기고, 다음에 얘기하자고 했지. 네가 기다리고 있다는 걸 알면서도 내가 편한 쪽을 택했어.',
+      '나는 말하지 않아도 행동으로 알 수 있다고 생각했어. 우산을 챙기고, 밥을 해 두고, 필요한 걸 먼저 준비하면 된다고. 하지만 네가 듣고 싶었던 말까지 대신할 수는 없었어.',
+      '네가 지쳐서 그만하자고 했을 때도 붙잡기보다 이유부터 따졌어. 네 마음을 듣기 전에 내 입장부터 설명하려고 했지. 지금 생각하면 미안해.',
+      '다시 시작할 수 있을지는 나도 모르겠어. 그래도 이번에는 중요한 결정을 혼자 미루지 않을게. 네 생각을 묻고 같이 정하고 싶어.',
+      '도면은 여기 두고 갈게. 버려도 괜찮아. 다만 내가 그때 너와 미래를 생각했던 건 진심이었다는 것만 알아 줬으면 해.',
+      '— 시온',
     ],
     door: '"안에 뭐가 있었는지는 말하지 마. 들으면 오늘 밤 못 잘 것 같아서."',
     night: [
@@ -1542,14 +1594,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 이어폰이 놓여 있었다. 한쪽만. 다른 한쪽은 아직 내 가방 서랍에 있을 것이다. 옆에 USB 하나. 라벨에 아무것도 안 적혀 있었다.',
     itemDesc: '3분 42초짜리 트랙 하나가 들어 있는 USB. 제목이 없다. 마지막 2초에 아주 작은 웃음소리가 들어 있는데, 그건 내가 웃던 날 유우시가 몰래 녹음한 소리다. 파일 이름은 아직도 "final_final_ㅁ"이다.',
     letter: [
-      '이 방에 스피커가 하나 있어. 벽에 붙어 있어. 나는 그 앞에 오래 앉아 있었어. 소리가 어떻게 벽을 타고 가는지 보고 있었어. 그러다 네 생각이 났어. 이상하지. 소리 보다가 사람 생각.',
-      '내가 만든 곡 중에 3분 42초짜리가 있어. 제목은 없어. 아직. 네가 자주 듣던 곡이 3분 42초였어. 그래서 그렇게 만들었어. 그냥 그랬어.',
-      '너는 늘 내가 무슨 생각을 하는지 물었지. 나는 대답 대신 노래를 보냈어. 네가 원한 건 한 문장이었는데, 나는 매번 앨범 하나를 보냈어. 서툴러서가 아니라, 말하면 틀릴 것 같아서.',
-      '한 번은 네가 웃는 걸 몰래 녹음했어. 미안해. 허락 안 받았어. 그 소리가 그 곡 마지막 2초에 들어 있어. 그래서 그 곡을 못 끝냈어. 끝내려면 그 2초를 지워야 하는데, 그건 내가 못 해.',
-      '헤어지던 날 네가 마지막으로 한 말은 말해 줘였어. 나는 아무 말도 못 했어. 지금도 그 장면에서 멈춰.',
-      '이 곡은 네 거야. 나는 만들었지만, 네가 없으면 재생이 안 돼.',
-      '다 들으면 마지막 2초에서 멈춰 줘. 그다음은 아직 내가 못 만들었어. 그 2초가 지나면, 네가 웃던 날이 끝나 버리니까.',
-      '— 유우시'
+      '이 USB에는 네가 예전에 자주 듣던 곡이 들어 있어. 파일 이름을 몇 번 바꿨는데 결국 제목은 못 붙였어. 그때 네가 어떤 노래를 좋아했는지 기억은 나는데, 지금은 어떤 음악을 듣는지 모르겠더라.',
+      '우리가 얘기하다가 다투면 나는 이어폰을 끼곤 했어. 생각을 정리할 시간이 필요하다고 말했지만, 사실은 네 말을 바로 듣는 게 겁났던 것 같아.',
+      '너는 내가 무슨 생각을 하는지 물었고, 나는 노래를 보내거나 괜찮다고만 했지. 네가 답답해하는 걸 알면서도 제대로 설명하지 않았어.',
+      '헤어지던 날 네가 마지막으로 한 말은 지금도 기억해. 그냥 솔직하게 말해 달라고 했지. 나는 그때도 대답을 미뤘어. 미안해.',
+      '이 곡을 다시 들으면 그때가 떠오르지만, 이제는 그 기억만 붙잡고 싶지는 않아. 네가 지금 어떤 생각을 하는지도 듣고 싶어.',
+      '다시 얘기할 기회가 생기면 이어폰부터 끼지 않을게. 네 말 먼저 들을게.',
+      '— 유우시',
     ],
     door: '"나왔어." (그가 문 옆에 서서 아무것도 묻지 않았다. 그게 물음보다 무거웠다.)',
     night: [
@@ -1573,14 +1624,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 악보가 접혀 있었다. 뒤집으면 뭔가 적혀 있을 것 같아서 한참 못 뒤집었다. 결국 뒤집었고, 아주 작은 글씨를 읽었다.',
     itemDesc: '네 장짜리 악보. 세 번째 장 뒤에 연필로 작게 "생일 — 10/24"라고 적혀 있다. 그 아래 지우개로 지운 자국. 다 지우지 못해서 이름 두 글자가 희미하게 남아 있다. 옆에 놓인 기타 피크는 가장자리가 닳아 있다.',
     letter: [
-      '악보 뒤에 뭐라고 적혀 있는지, 너는 모르지. 생일, 10월 24일. 지웠다가 다시 썼어. 지우는 게 더 이상해서. 이 악보는 너한테 주려고 만든 거야. 생일 선물로. 두 달 전부터 만들었어.',
-      '나는 노래밖에 못 해서 좋다는 말도 노래로 했어. 너는 그게 좋다고 했지만 사실은 조금 외로웠지. 나는 알았어. 알면서도 노래가 편했어.',
-      '헤어지던 날 나는 울었고 너는 안 울었어. 그게 이상하게 오래 기억나. 네가 안 운 게 나는 제일 무서웠어.',
-      '숨을 못 쉬겠다고 했을 때, 내가 숨을 막고 있었다는 걸 그때 처음 알았어.',
-      '나는 매일 힘들다고 말했어. 그게 솔직한 거라고 생각했어. 그런데 너는 그걸 매일 받아 주느라 네가 힘든 걸 말 못 했더라고. 그거 한참 뒤에 알았어. 내가 너한테 제일 못된 짓 한 거야. 솔직한 척하면서.',
-      '그래서 이 편지에서는 힘들다는 말 안 할게. 대신 하나만. 나는 네가 웃는 동안이 내 인생에서 제일 좋은 시간이었어. 그거 하나는, 힘들어도 사실이야.',
-      '노래는 완성했어. 근데 이제 부를 사람이 없네. 네가 안 들어도 나는 계속 부를 거야. 그게 내가 할 수 있는 유일한 거라서.',
-      '— 대영'
+      '이 악보는 네 생일에 주려고 썼던 곡이야. 완성해 놓고도 결국 주지 못했어. 그때는 네가 좋아할지 걱정된다고 했지만, 사실은 내 마음을 제대로 말하는 게 부끄러웠어.',
+      '나는 힘들 때마다 네게 전화했어. 네가 받아 주면 괜찮아졌고, 그래서 네가 늘 괜찮은 줄 알았어. 네가 지쳐 있다는 걸 눈치채고도 깊게 묻지 않았지.',
+      '네가 내 얘기만 듣고 있다는 말을 했을 때, 나는 미안하다고 하면서도 금방 또 내 속상한 얘기를 했어. 사과를 해 놓고도 달라진 게 없었던 거야.',
+      '헤어진 뒤에야 네가 얼마나 참고 있었는지 조금씩 알게 됐어. 그때 네가 해 줬던 말들을 다시 생각해 봤어. 듣기 싫은 말도 있었지만 대부분 맞는 말이었어.',
+      '다시 만나고 싶다는 마음은 있어. 그렇다고 네가 나를 받아 줘야 한다고 생각하지는 않아. 네가 어떤 마음인지 먼저 듣고 싶어.',
+      '이번에는 네가 힘들다고 하면 내 얘기부터 꺼내지 않을게. 그건 약속할게.',
+      '— 대영',
     ],
     door: '"…울었지." (그가 손등으로 내 눈가를 스치다 말고 손을 내렸다. 여기서는 안 되는 손짓이라는 걸 아는 얼굴로.)',
     night: [
@@ -1604,16 +1654,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 반지 두 개가 나란히 놓여 있었다. 하나는 안쪽이 조금 검게 변해 있었다. 영수증이 그 아래 깔려 있었고, 금액이 오백 원이었다.',
     itemDesc: '망원동 골목 잡화점에서 산 커플 반지. "이거 진짜 은이야"라고 료가 우겼고, 일주일 만에 두 사람 손가락이 검어졌다. 영수증에는 날짜와 함께 료의 글씨로 "오백 원. 인생 최고 효율."이라고 적혀 있다.',
     letter: [
-      '반지 두 개 아직 있어. 하나는 내가, 하나는 네가. 오백 원이었어. 이거 진짜 은이야라고 했는데 일주일 만에 손가락이 검어졌지. 미안해. 거짓말했어. 근데 그거, 내 인생에서 제일 싼 거짓말이고 제일 안 후회하는 거짓말이야.',
-      '나 농담 많이 하지. 너는 그거 좋아했어. 웃어 줬어. 근데 나는 농담으로 도망친 거였어. 진지해지면 네가 부담스러워할까 봐. 그러니까 이 편지에서는 농담 안 할게. 한 번만, 진짜로.',
-      '농담인 줄 알았던 것들, 적어 볼게.',
-      '너 오늘 예뻐 — 진심이었어.',
-      '나 너 없으면 안 돼 — 진심이었어.',
-      '우리 이거 오래 하자 — 진심이었어.',
-      '안 웃으면 나 무서워 — 이것도 진심이었어. 이게 제일 진심이었어.',
-      '네가 화장실에서 혼자 울던 날, 나는 문 앞에 서 있었어. 노크할까 하다가 농담을 준비했어. 문 열고 웃으면서 뭐 하냐고. 그게 내 최선이었어. 그날 밤에 너는 진짜인 게 없냐고 했지. 있었어. 전부 진짜였어.',
-      '반지는 안 버렸어. 새로 살 생각도 있어. 이번엔 진짜 은으로. 영수증도 있을 거야. 근데 네가 안 받으면, 그건 그냥 반지 하나겠지. 그래도 사고 싶어.',
-      '— 료'
+      '오백 원짜리 반지는 아직 갖고 있어. 진짜 은이라고 우겼던 거 기억나? 며칠 지나니까 손가락에 자국이 남았지. 그때는 네가 웃어서 나도 같이 웃었는데, 사실은 조금 창피했어.',
+      '나는 분위기가 어색해지면 농담부터 했어. 네가 진지하게 얘기하려고 할 때도 그랬지. 네가 웃으면 괜찮아진 줄 알았는데, 네가 웃어 준다고 괜찮은 건 아니었어.',
+      '네가 나한테 진짜 속마음을 말해 달라고 했던 날이 있어. 나는 장난으로 넘겼고, 너는 더 묻지 않았어. 그날 이후로 우리 사이가 조금씩 멀어졌던 것 같아.',
+      '헤어진 뒤에도 네가 웃던 순간만 떠올리려고 했어. 그래야 내가 잘못한 일을 덜 생각하게 되니까. 이제는 그럴 수 없다는 걸 알아.',
+      '다시 만나고 싶지만 예전처럼 돌아가고 싶은 건 아니야. 같은 방식으로 만나면 또 같은 이유로 헤어질 테니까.',
+      '이번에는 농담을 해도 네가 진지하게 말할 때는 멈출게. 네 얘기를 끝까지 듣고 싶어.',
+      '— 료',
     ],
     door: '"나 지금 장난 못 치겠어. 미안해. 처음이야."',
     night: [
@@ -1637,14 +1684,13 @@ var XDATA = {
     xroomIntro: '방 가운데에 마들렌 틀이 놓여 있었다. 한쪽이 찌그러져 있었다. 옆에 노트 한 권. 표지에 아무것도 안 적혀 있었는데, 왠지 펼치면 안 될 것 같았다. 펼쳤다.',
     itemDesc: '세 번 실패한 마들렌 틀. 그리고 노트 한 권. 첫 장부터 내가 좋아하는 것이 하나씩 적혀 있다. 된장찌개는 싱겁게, 커피는 얼음 많이, 비 오는 날엔 유난히 조용해지는 것, 웃을 때 왼쪽 볼이 먼저 올라가는 것. 마지막 장은 비어 있다.',
     letter: [
-      '마들렌 틀, 아직 그 집에 있어. 주인이 안 버렸대. 세 번 물어봤어.',
-      '내가 구운 건 다 실패작이었는데 너는 다 먹었지. 첫 번째는 탔고, 두 번째는 안 익었고, 세 번째는 짰어. 너는 세 번째 먹고 이게 제일 맛있다고 했어. 거짓말인 거 알았어. 그래도 기뻤어.',
-      '너는 내가 정하는 걸 싫어했지. 뭐 먹을래 하면 아무거나, 어디 갈래 하면 네가 정해. 그거 편해서 그런 거 아니었어. 네가 정한 걸로 내 하루가 채워지는 게 좋았어. 내가 정하면 틀릴 것 같고, 네가 정하면 무조건 맞는 것 같았어. 그게 얼마나 게으른 사랑인지 몰랐어.',
-      '헤어질 때도 네가 말했지. 나는 네라고 했어. 마지막까지 네가 정했어. 그때 나는 싫다고 해야 했어. 그 한마디를 못 해서 지금도 후회해.',
-      '네가 좋아하는 거, 다 적어 놨어. 노트 한 권이야. 마지막 장에는 아직 아무것도 안 적었어. 네가 지금 좋아하는 걸 모르니까.',
-      '그 노트는 버릴 생각 없어. 못 버리겠어.',
-      '나 이제 정하는 연습하고 있어. 오늘은 뭐 먹을지도 내가 정했어. 별거 아니지. 그래도 좀 컸어.',
-      '— 사쿠야'
+      '마들렌 틀은 아직 갖고 있어. 처음 만들었을 때 네가 맛있다고 해 줬던 거 기억나? 사실 그건 많이 탔는데, 네가 웃으면서 다 먹어 줬지.',
+      '나는 늘 네가 정해 주면 편했어. 어디 갈지, 뭘 먹을지, 주말에 뭘 할지. 네가 고르면 실패하지 않을 거라고 생각했어.',
+      '그런데 네가 가끔은 나도 원하는 걸 말해 줬으면 좋겠다고 했을 때, 나는 대답을 못 했어. 원하는 게 없어서가 아니라 틀릴까 봐 겁났던 거야.',
+      '헤어질 때도 네가 먼저 말을 꺼냈고, 나는 네 말에 고개만 끄덕였어. 붙잡고 싶었는데 어떻게 해야 할지 몰랐어. 그 뒤로 그 장면을 많이 생각했어.',
+      '요즘은 작은 것도 내가 먼저 정해 보려고 해. 가고 싶은 곳을 고르고, 먹고 싶은 걸 말하고. 별일 아닌데 나한테는 연습이 필요했어.',
+      '다시 만나게 된다면 네가 다 정해 주길 바라지 않을게. 나도 내 마음을 말하고, 네 마음도 물어볼게.',
+      '— 사쿠야',
     ],
     door: '"아무것도 안 물어볼게. 근데 손이 차가워."',
     night: [
@@ -2004,196 +2050,99 @@ var DATE_HINT = {
 
 var DATES = {
   riku: [
-    { t: 'narr', text: '한강. 리쿠는 필름카메라를 목에 걸고 아무 말 없이 걸었다. 내가 멈추면 그도 멈췄다. 바람이 물 위로 지나갔다.' },
-    { t: 'say', who: 'riku', text: '"필름 한 통에 서른여섯 장이야. 남은 게 열한 장."' },
-    { t: 'me', text: '"아껴 써야겠네."' },
-    { t: 'say', who: 'riku', text: '"아껴서 뭐 하게. 오늘 다 쓰면 되지." (카메라를 내 쪽으로 돌렸다.) "서 봐. 어색한 얼굴은 안 찍으니까."' },
-    { t: 'choice', prompt: '"어떤 얼굴을 찍어 줄 거야?"', opts: [
-      { label: '웃는 얼굴', eff: { riku: 3 }, after: [
-        { t: 'say', who: 'riku', text: '"…그건 아껴둘게." (셔터가 먼저, 웃음이 나중이었다. 순서가 거꾸로였다.)' }
-      ]},
-      { label: '지금 이 얼굴', eff: { riku: 4 }, after: [
-        { t: 'say', who: 'riku', text: '"이상한 답이네." (웃으면서 찍었다. 그날 남은 열한 장 중 네 장이 내 사진이 됐다.)' }
-      ]},
-      { label: '안 찍어도 돼', eff: { riku: 0 }, after: [
-        { t: 'say', who: 'riku', text: '"알겠어. 그럼 눈에 담을게. 그게 더 오래가니까."' }
-      ]},
-      { label: '"왜 자꾸 피해?" 이유를 캐묻는다', eff: { riku: -3 }, mine: 'riku',
-        say: '"왜 자꾸 피하는 거야?"', after: [
-        { t: 'narr', text: '(그가 셔터에서 손을 뗐다. 대답 대신 카메라를 가슴께로 내렸다. 이 사람이 물러나는 소리는 늘 이렇게 작다.)' }
-      ]}
+    {t:'narr',text:'한강 산책로. 리쿠는 카메라를 목에 걸고 걷다가, 내가 보폭을 늦추자 자기도 속도를 줄였다.'},
+    {t:'say',who:'riku',text:'"사진 찍는 거 불편해? 오늘은 안 찍어도 돼."'},
+    {t:'me',text:'"아니. 네가 찍어 주는 건 괜찮아."'},
+    {t:'say',who:'riku',text:'"그럼 한 장만. 웃으라고는 안 할게. 지금 표정도 괜찮으니까."'},
+    {t:'choice',prompt:'카메라를 든 리쿠에게 뭐라고 할까?',opts:[
+      {label:'"나도 너 찍어 줄게"',eff:{riku:4},after:[{t:'say',who:'riku',text:'"나? 잠깐만. 준비 안 됐는데." (평소보다 오래 카메라를 의식했다.)'}]},
+      {label:'"오늘은 같이 찍자"',eff:{riku:4},after:[{t:'say',who:'riku',text:'"그건 좋다. 사진 찍을 때마다 네가 옆에 있었으면 좋겠다고 생각했거든."'}]},
+      {label:'"그냥 지금처럼 걷자"',eff:{riku:1},after:[{t:'say',who:'riku',text:'"응. 오늘은 이 정도가 좋겠다." (카메라를 가방에 넣었다.)'}]},
+      {label:'왜 늘 카메라 뒤에 숨냐고 따진다',eff:{riku:-3},mine:'riku',say:'"넌 왜 맨날 카메라 뒤에만 있어?"',after:[{t:'say',who:'riku',text:'"그렇게 보였구나. 변명은 안 할게. 나도 그게 문제인 건 알아."'}]}
     ]},
-    { t: 'say', who: 'riku', text: '"…사람들 앞에서는, 너 모른 척하는 게 제일 어려워. 여기서는 안 그래도 되잖아."' },
-    { t: 'narr', text: '돌아오는 버스에서 그가 카메라를 넘겼다. 마지막 컷. 내가 웃고 있었고, 초점이 조금 흔들려 있었다.' }
+    {t:'say',who:'riku',text:'"사진 찍을 때는 네가 어디 보는지 알 수 있잖아. 근데 마주 보고 얘기하면 가끔 모르겠어. 네가 무슨 생각 하는지."'},
+    {t:'me',text:'"그럼 물어보면 되잖아."'},
+    {t:'say',who:'riku',text:'"맞아. 다음부터는 물어볼게." (돌아오는 길에는 카메라를 꺼내지 않았다.)'}
   ],
   sion: [
-    { t: 'narr', text: '서촌의 좁은 골목. 시온은 계단을 오를 때마다 반 발짝 앞에서 돌아봤다. 나중에 그는 말했다. "넘어질까 봐. …아니, 확인하고 싶어서."' },
-    { t: 'say', who: 'sion', text: '"여기 카페는 원래 열 명까지만 들어와. 오늘 딱 열 명이네. 운이 좋았어."' },
-    { t: 'me', text: '"그런 걸 다 세고 있어?"' },
-    { t: 'say', who: 'sion', text: '"응." (당연하게 대답했다.) "오늘은 특히."' },
-    { t: 'choice', prompt: '(그가 잔을 만지작거리며) "나한테 편하게 말해도 돼?"', opts: [
-      { label: '편하게 말해도 된다고 한다', eff: { sion: 3 }, after: [
-        { t: 'say', who: 'sion', text: '"…그럼, 잘 부탁해요." (말하고 나서 잠깐 숨을 골랐다. 오래 참은 사람처럼.)' }
-      ]},
-      { label: '먼저 말을 놓는다', eff: { sion: 3 }, after: [
-        { t: 'me', text: '"시온아."' },
-        { t: 'narr', text: '(그가 눈을 크게 떴다. 그리고 아무 말 없이 물을 한 모금 마셨다. 귀가 빨개진 걸 들켰다.)' }
-      ]},
-      { label: '그냥 웃어 준다', eff: { sion: 1 }, after: [
-        { t: 'say', who: 'sion', text: '"뭐야, 그 웃음은. …답을 안 해 주면 나 혼자 고민하게 되잖아." (그가 웃었다. 조금은 아쉬운 웃음이었다.)' }
-      ]},
-      { label: '약속을 가볍게 넘긴다', eff: { sion: -3 }, mine: 'sion',
-        say: '"다음에 또 오면 되잖아."', after: [
-        { t: 'say', who: 'sion', text: '"…응. 다음에." (잔을 내려놓았다. 정확하게, 소리 나지 않게.)' }
-      ]}
+    {t:'narr',text:'서촌의 작은 카페. 시온은 메뉴판을 오래 보다가 결국 평소 마시던 걸 골랐다.'},
+    {t:'say',who:'sion',text:'"여기 조용해서 좋다. 너랑 얘기하기도 편하고."'},
+    {t:'me',text:'"무슨 얘기 하려고?"'},
+    {t:'say',who:'sion',text:'"별건 아니고. 요즘 네가 어떻게 지내는지 궁금했어. 물어보면 부담스러울까 봐 미뤘는데, 그럴수록 더 어색해지더라."'},
+    {t:'choice',prompt:'시온이 조심스럽게 말을 꺼냈다.',opts:[
+      {label:'요즘 고민을 먼저 털어놓는다',eff:{sion:4},after:[{t:'say',who:'sion',text:'"말해 줘서 고마워. 해결해 주겠다는 말보다 그냥 듣는 게 먼저인 것 같아."'}]},
+      {label:'시온도 어떻게 지냈는지 묻는다',eff:{sion:3},after:[{t:'say',who:'sion',text:'"일은 계속 바빴어. 근데 바쁘다는 말로 연락을 미룬 건 내 선택이었지. 그건 인정해."'}]},
+      {label:'오늘은 가벼운 얘기만 하자고 한다',eff:{sion:1},after:[{t:'say',who:'sion',text:'"좋아. 오늘 하루만큼은 편하게 있자. 다음에 얘기하고 싶어지면 그때 해도 되고."'}]},
+      {label:'"그런 얘기 이제 와서 뭐 해"라고 한다',eff:{sion:-3},mine:'sion',say:'"그런 얘기 이제 와서 뭐 해."',after:[{t:'say',who:'sion',text:'"그렇게 느낄 만해. 내가 먼저 말했어야 했는데 늦었어."'}]}
     ]},
-    { t: 'narr', text: '헤어지기 전, 그가 내 어깨에 떨어진 나뭇가지를 치워 줬다. 그 손이 잠깐 거기 머물렀다.' }
+    {t:'narr',text:'카페를 나와 골목을 걸었다. 시온은 횡단보도 앞에서 내 걸음에 맞춰 멈췄다.'},
+    {t:'say',who:'sion',text:'"오늘 같이 나와 줘서 고마워. 다음에는 내가 먼저 약속 잡을게."'}
   ],
   yushi: [
-    { t: 'narr', text: '을지로, 계단 아래 레코드숍. 유우시는 LP판을 손끝으로만 넘겼다. 먼지 냄새와 낮은 음악.' },
-    { t: 'say', who: 'yushi', text: '"이 곡, 3분 42초야. 3분 40초부터가 진짜야." (이어폰 한쪽을 내 귀에 꽂았다. 반대쪽은 자기 귀에.)' },
-    { t: 'narr', text: '(그 둘 사이의 거리는 이어폰 줄 길이만큼이었다.)' },
-    { t: 'choice', prompt: '"어떻게 들을까?"', opts: [
-      { label: '눈을 감고 듣는다', eff: { yushi: 3 }, after: [
-        { t: 'say', who: 'yushi', text: '노래가 끝나고 그가 말했다. "…봐. 눈 감으면 소리가 더 가까워지지." (그는 계속 나를 보고 있었다.)' }
-      ]},
-      { label: '그를 본다', eff: { yushi: 3 }, after: [
-        { t: 'say', who: 'yushi', text: '"노래보다 이쪽이 재밌으면, 나는 상관없어." (시선을 피하지 않았다.)' }
-      ]},
-      { label: '무슨 곡인지 묻는다', eff: { yushi: 1 }, after: [
-        { t: 'say', who: 'yushi', text: '"제목은 없어. 아직. …누가 붙여 주면 좋겠는데." (판을 다시 꽂았다. 말끝이 조금 남아 있었다.)' }
-      ]},
-      { label: '대답을 재촉한다', eff: { yushi: -3 }, mine: 'yushi',
-        say: '"지금 당장 말해 줘."', after: [
-        { t: 'narr', text: '(그가 이어폰을 다시 꽂았다. 대답 대신 판을 넘겼다. 더는 아무것도 말하지 않았다.)' }
-      ]}
+    {t:'narr',text:'을지로 레코드숍. 유우시는 한참 음반을 고르다가 두 장을 나란히 들었다.'},
+    {t:'say',who:'yushi',text:'"둘 중에 뭐가 더 좋아? 나는 둘 다 좋은데, 네 취향도 궁금해서."'},
+    {t:'me',text:'"네가 고른 건데 내가 골라도 돼?"'},
+    {t:'say',who:'yushi',text:'"응. 같이 듣는 거니까."'},
+    {t:'choice',prompt:'유우시가 이어폰 한쪽을 건넸다.',opts:[
+      {label:'같이 듣고 마음에 드는 부분을 말한다',eff:{yushi:4},after:[{t:'say',who:'yushi',text:'"나도 거기 좋아해. 네가 그 부분에서 고개 끄덕일 줄은 몰랐어."'}]},
+      {label:'유우시가 왜 이 곡을 골랐는지 묻는다',eff:{yushi:3},after:[{t:'say',who:'yushi',text:'"처음 들었을 때 집에 가는 길이 생각났어. 별일 없던 날인데 이상하게 오래 기억나더라."'}]},
+      {label:'다른 장르도 들어 보자고 한다',eff:{yushi:2},after:[{t:'say',who:'yushi',text:'"좋아. 네가 고르는 것도 들어 보고 싶어. 내가 모르는 거 많이 알려 줘."'}]},
+      {label:'대답을 재촉하며 이어폰을 잡아챈다',eff:{yushi:-3},mine:'yushi',say:'"빨리 골라. 시간 없어."',after:[{t:'say',who:'yushi',text:'"알았어. 내가 너무 오래 골랐네. 다음엔 먼저 물어볼게."'}]}
     ]},
-    { t: 'narr', text: '나오는 길, 그는 이어폰을 돌려받지 않았다. "한쪽은 그냥 갖고 있어. 다음에 나머지 들려줄게."' }
+    {t:'narr',text:'가게를 나와서도 유우시는 이어폰을 한쪽만 끼고 있었다.'},
+    {t:'say',who:'yushi',text:'"오늘은 음악 얘기만 한 것 같네. 다음에는 네 얘기도 더 듣고 싶어."'}
   ],
   jaehee: [
-    { t: 'narr', text: '노들섬. 대영은 잔디에 앉아 기타를 품고 있었다. 줄을 한 번 튕기고, 또 한 번.' },
-    { t: 'say', who: 'jaehee', text: '"이 노래, 오늘 아침에 만든 거야. 가사 하나가 안 써져서 가져왔어."' },
-    { t: 'me', text: '"그런 걸 왜 나한테 보여 줘?"' },
-    { t: 'say', who: 'jaehee', text: '"물어보고 싶은 게 있어서." (아주 솔직한 얼굴로 말했다. 이 사람은 숨기는 법을 모른다.)' },
-    { t: 'choice', prompt: '"뭐가 안 써졌는데?"', opts: [
-      { label: '가사가 궁금하다', eff: { jaehee: 3 }, after: [
-        { t: 'say', who: 'jaehee', text: '"…네가 웃는 동안은 내가 제일 좋은 사람, 이 줄이야. 이상하지? 근데 안 지워져."' }
-      ]},
-      { label: '불러 달라고 한다', eff: { jaehee: 3 }, after: [
-        { t: 'narr', text: '(그가 부르기 시작했다. 목소리가 작아서 강 건너까지는 못 갔을 것이다. 나는 그게 좋았다.)' }
-      ]},
-      { label: '다른 얘기 하자', eff: { jaehee: 0 }, after: [
-        { t: 'say', who: 'jaehee', text: '"…응, 그러자." (기타를 내려놓았다. 웃고 있었지만 조금 늦게 웃었다.)' }
-      ]},
-      { label: '애매하게 남겨 둔다', eff: { jaehee: -5 }, mine: 'jaehee',
-        say: '"지금은 말 안 할래. 나중에."', after: [
-        { t: 'say', who: 'jaehee', text: '"…응. 나중에." (웃었는데, 웃음이 끝까지 가지 않았다.) "나 방금 좀 불안했어. 왜인지는 나도 몰라."' }
-      ]}
+    {t:'narr',text:'노들섬 잔디밭. 대영은 기타를 가져왔지만 바로 연주하지 않고 케이스 옆에 내려놓았다.'},
+    {t:'say',who:'jaehee',text:'"오늘은 노래부터 안 할게. 나 말로 얘기하는 것도 좀 연습해야 해서."'},
+    {t:'me',text:'"무슨 얘기?"'},
+    {t:'say',who:'jaehee',text:'"내가 힘들다는 얘기만 너무 많이 했던 것 같아. 네가 어떤 하루를 보냈는지는 잘 안 물어봤잖아."'},
+    {t:'choice',prompt:'대영이 눈치를 살피며 물었다.',opts:[
+      {label:'그때 서운했던 점을 말한다',eff:{jaehee:4},after:[{t:'say',who:'jaehee',text:'"그랬구나. 그때 말해 줬으면 좋았겠지만, 지금이라도 들을 수 있어서 다행이야. 변명하지 않고 들을게."'}]},
+      {label:'지금은 괜찮다고 안심시킨다',eff:{jaehee:2},after:[{t:'say',who:'jaehee',text:'"고마워. 그래도 괜찮았다는 말만 듣고 넘어가진 않을게. 나도 바뀌어야 하니까."'}]},
+      {label:'기타를 치며 기분 전환하자고 한다',eff:{jaehee:3},after:[{t:'say',who:'jaehee',text:'"좋아. 이번엔 네가 듣고 싶은 노래로 할게. 신청곡 받아요." (조금 편하게 웃었다.)'}]},
+      {label:'"너 얘기만 하는 건 지겨워"라고 쏘아붙인다',eff:{jaehee:-4},mine:'jaehee',say:'"너 얘기만 하는 건 지겨워."',after:[{t:'say',who:'jaehee',text:'"…알겠어. 내가 또 내 얘기만 했네. 미안해."'}]}
     ]},
-    { t: 'narr', text: '해가 지고, 그는 노래를 끝까지 부르지 않았다. 대신 이렇게 말했다. "다음에 완성하면 제일 먼저 들려줄게."' }
+    {t:'say',who:'jaehee',text:'"오늘은 네 얘기를 더 듣고 싶었어. 다음에 또 만나면 그때도 그렇게 할게."'}
   ],
   ryo: [
-    { t: 'narr', text: '망원동, 골목 끝 빈티지 샵. 료는 나에게 셔츠를 하나 걸어 주고 한 발 물러서서 봤다. 아주 진지한 얼굴로.' },
-    { t: 'say', who: 'ryo', text: '"어때. 이거 완전 너잖아. 아니, 네가 이걸 완전하게 만드는 거지."' },
-    { t: 'me', text: '"말이 두 개인데."' },
-    { t: 'say', who: 'ryo', text: '"중요한 말은 두 번 하는 거야." (웃었다. 장난인데 눈은 안 웃었다.)' },
-    { t: 'choice', prompt: '"계속 장난칠 거야?"', opts: [
-      { label: '진지한 얼굴도 좋다고 한다', eff: { ryo: 3 }, after: [
-        { t: 'say', who: 'ryo', text: '"…지금 그거, 반칙이야." (셔츠를 정리하러 돌아섰다. 귀가 보였다.)' }
-      ]},
-      { label: '같이 장난친다', eff: { ryo: 2 }, after: [
-        { t: 'narr', text: '(내가 모자를 그의 머리에 눌러 씌웠다. 그가 아무 말 없이 벗어서 내게 씌웠다. "이제 똑같네.")' }
-      ]},
-      { label: '장난 그만하자고 한다', eff: { ryo: 0 }, after: [
-        { t: 'say', who: 'ryo', text: '"…응." (금방 조용해졌다. 이 사람이 조용해지면 더 크게 들린다.)' }
-      ]},
-      { label: '진지한 말을 웃으면서 넘긴다', eff: { ryo: -5 }, mine: 'ryo',
-        say: '(그의 말을 웃음으로 넘겼다)', after: [
-        { t: 'say', who: 'ryo', text: '"…나 방금 진지했어." (웃으려다가 그만두었다. 웃음이 안 만들어지는 날은, 이 사람이 제일 조용하다.)' }
-      ]}
+    {t:'narr',text:'망원동 빈티지 숍. 료는 옷걸이를 넘기다 내게 셔츠 하나를 내밀었다.'},
+    {t:'say',who:'ryo',text:'"이거 너한테 잘 어울릴 것 같아. 입어 볼래? 싫으면 말고."'},
+    {t:'me',text:'"오늘은 평소보다 얌전하네."'},
+    {t:'say',who:'ryo',text:'"나도 진지할 때 있어. 맨날 웃기만 하면 나도 좀 피곤하거든."'},
+    {t:'choice',prompt:'료가 옷걸이를 내려놓고 물었다.',opts:[
+      {label:'진지한 얘기도 듣고 싶다고 한다',eff:{ryo:4},after:[{t:'say',who:'ryo',text:'"그럼 말할게. 사실 네 앞에서는 분위기 무거워질까 봐 자꾸 농담부터 나와."'}]},
+      {label:'같이 장난치며 옷을 골라 준다',eff:{ryo:3},after:[{t:'say',who:'ryo',text:'"이건 좀 별로지? 인정. 네가 골라 주는 게 더 낫겠다."'}]},
+      {label:'그냥 구경하자고 한다',eff:{ryo:1},after:[{t:'say',who:'ryo',text:'"좋아. 꼭 뭘 사야 데이트인 건 아니잖아."'}]},
+      {label:'"그런 말은 누구한테나 하잖아"라고 한다',eff:{ryo:-3},mine:'ryo',say:'"그런 말은 누구한테나 하잖아."',after:[{t:'say',who:'ryo',text:'"그렇게 들렸다면 미안. 적어도 지금 이 말은 너한테만 하는 거야."'}]}
     ]},
-    { t: 'narr', text: '돌아가는 길, 그는 아무 말 없이 내 손에 봉투를 쥐여 줬다. 아까 그 셔츠였다. "안 사도 돼. 입어 보기만 해도 그 집은 좋아해."' }
+    {t:'narr',text:'가게를 나와 붕어빵을 하나씩 샀다. 료는 자기 몫을 반으로 나눠 내 쪽에 더 큰 쪽을 줬다.'},
+    {t:'say',who:'ryo',text:'"다음에는 네가 가고 싶은 데 가자. 나 오늘 꽤 재밌었어."'}
   ],
   sakuya: [
-    { t: 'narr', text: '연남동, 작은 디저트 가게. 사쿠야는 진열대를 한참 봤다. 고르는 것보다 보는 걸 더 좋아하는 얼굴이었다.' },
-    { t: 'say', who: 'sakuya', text: '"이거 먹어 봐. 진짜야. 나 이거 먹으려고 여기 왔어."' },
-    { t: 'me', text: '"그럼 나는?"' },
-    { t: 'say', who: 'sakuya', text: '"너는… 나랑 같이 먹으려고 온 거지." (자연스럽게 말했다. 이 사람은 이런 말을 계산 없이 한다.)' },
-    { t: 'choice', prompt: '"한 입 먹고 뭐라고 할까?"', opts: [
-      { label: '맛있다고 한다', eff: { sakuya: 3 }, after: [
-        { t: 'say', who: 'sakuya', text: '"…다행이다." (자기 접시는 안 보고 내 입만 봤다. 그러다 눈이 마주치자 급히 접시를 들었다.)' }
-      ]},
-      { label: '다음엔 네가 만들어 달라고 한다', eff: { sakuya: 4 }, after: [
-        { t: 'say', who: 'sakuya', text: '"…진짜? 그러면 나 오늘 밤에 만들어 볼게. 잘 못 만들어도 먹어 줘."' }
-      ]},
-      { label: '조금 달다고 한다', eff: { sakuya: 1 }, after: [
-        { t: 'say', who: 'sakuya', text: '"아, 그래? 나는 이게 딱인데." (자기 걸 한 입 먹고 고개를 갸웃했다.) "너는 덜 단 게 좋구나. 기억할게."' }
-      ]},
-      { label: '다른 사람과 비교한다', eff: { sakuya: -5 }, mine: 'sakuya',
-        say: '"다른 사람은 이런 거 잘 안 그러던데."', after: [
-        { t: 'narr', text: '(그가 접시를 만지작거렸다. 웃고 있었는데 눈은 접시를 보고 있었다. 이 사람은 이런 걸 오래 기억하는 쪽이다.)' }
-      ]}
+    {t:'narr',text:'연남동 디저트 가게. 사쿠야는 메뉴판을 보다가 내가 먼저 고르도록 기다렸다.'},
+    {t:'say',who:'sakuya',text:'"오늘은 네가 먹고 싶은 걸로 하자. 나는 다 괜찮아."'},
+    {t:'me',text:'"너도 먹고 싶은 거 있잖아."'},
+    {t:'say',who:'sakuya',text:'"있지. 근데 네가 고르는 것도 궁금해. 다음엔 내가 먼저 고를게."'},
+    {t:'choice',prompt:'디저트가 나오자 사쿠야가 포크를 내밀었다.',opts:[
+      {label:'한 입 먹고 서로 바꿔 먹자고 한다',eff:{sakuya:4},after:[{t:'say',who:'sakuya',text:'"좋아. 네가 먹던 것도 먹어 보고 싶었어. 이게 더 맛있네."'}]},
+      {label:'다음에는 직접 만들어 달라고 한다',eff:{sakuya:4},after:[{t:'say',who:'sakuya',text:'"진짜? 그럼 이번 주말에 연습할게. 이번엔 실패해도 숨기지 않을 거야."'}]},
+      {label:'너무 달다고 솔직하게 말한다',eff:{sakuya:2},after:[{t:'say',who:'sakuya',text:'"아, 그렇구나. 다음엔 덜 단 걸로 고를게. 말해 줘서 고마워."'}]},
+      {label:'다른 사람 취향과 비교한다',eff:{sakuya:-3},mine:'sakuya',say:'"다른 사람은 이런 거 안 좋아하던데."',after:[{t:'say',who:'sakuya',text:'"그 사람이랑 내 취향은 다르니까. 다음엔 네가 좋아하는 걸 더 잘 알아볼게."'}]}
     ]},
-    { t: 'narr', text: '가게를 나서는데 그가 멈춰 섰다. "오늘 하루… 내가 제일 많이 웃은 것 같아." (그러고는 먼저 걸어갔다. 얼굴을 안 보여 주려고.)' }
+    {t:'narr',text:'가게를 나와 걷다가 사쿠야가 손에 든 작은 봉투를 내밀었다. 안에는 아까 고른 디저트가 하나 더 들어 있었다.'},
+    {t:'say',who:'sakuya',text:'"집에 가서도 먹어. 오늘 같이 와 줘서 고마워."'}
   ]
 };
 
 /* ---- Day 4 : 2차 데이트 (내가 다른 사람을 지목) ---- */
 var DATES4 = {
-  riku: [
-    { t: 'narr', text: '두 번째 한강. 이번엔 밤이었다. 리쿠는 카메라를 가져오지 않았다.' },
-    { t: 'say', who: 'riku', text: '"오늘은 안 찍어. 오늘 거는… 좀 다르게 남기고 싶어서."' },
-    { t: 'choice', prompt: '"어떻게 남길래?"', opts: [
-      { label: '말로 남긴다', eff: { riku: 3 }, after: [{ t: 'say', who: 'riku', text: '"(한참 뒤에) …오늘 밤은, 안 잊는 걸로 하자. 내가 안 잊을 테니까."' }]},
-      { label: '손을 잡는다', eff: { riku: 4 }, after: [{ t: 'narr', text: '(그가 손을 내려다보다가 천천히 손가락을 접었다. 카메라를 든 적 없는 손이었다.)' }]},
-      { label: '그냥 웃는다', eff: { riku: 2 }, after: [{ t: 'say', who: 'riku', text: '"…그 웃음, 반칙이야." (그도 웃었다. 오늘은 그게 다정했다.)' }]}
-    ]}
-  ],
-  sion: [
-    { t: 'narr', text: '옥상. 시온이 접이식 의자를 두 개 펴 놓았다. 언제 준비했는지 모를 속도였다.' },
-    { t: 'say', who: 'sion', text: '"여기서 보면 스카이라인이 제일 예뻐. 내가 설계한 건 아니지만."' },
-    { t: 'choice', prompt: '(옆자리에 앉으며)', opts: [
-      { label: '고맙다고 한다', eff: { sion: 3 }, after: [{ t: 'say', who: 'sion', text: '"고맙긴. 내가 앉고 싶어서 편 거야." (조금 웃었다.)' }]},
-      { label: '어깨에 기댄다', eff: { sion: 4 }, after: [{ t: 'narr', text: '(그가 잠깐 굳었다가, 숨을 고르고 어깨를 조금 낮췄다. 기대기 좋은 높이로.)' }]},
-      { label: '조용히 바람을 맞는다', eff: { sion: 2 }, after: [{ t: 'say', who: 'sion', text: '"말 안 해도 되지. 나는 이게 편해."' }]}
-    ]}
-  ],
-  yushi: [
-    { t: 'narr', text: '방음이 되는 작은 방. 유우시가 노트북을 열었다. 화면에 파형이 떠 있었다.' },
-    { t: 'say', who: 'yushi', text: '"이거, 아무한테도 안 들려줬어. 아직 완성이 아니야. 끝이 없어서."' },
-    { t: 'choice', prompt: '"끝이 없는 채로 듣는다"', opts: [
-      { label: '끝을 들어 보고 싶다고 한다', eff: { yushi: 3 }, after: [{ t: 'say', who: 'yushi', text: '"그럼… 같이 만들어. 마지막 소리는 네가 정해."' }]},
-      { label: '눈을 감는다', eff: { yushi: 4 }, after: [{ t: 'narr', text: '(소리가 방의 모서리를 돌았다. 눈을 감고 있으면 그가 어디 있는지 선으로 알 수 있었다. 가까이.)' }]},
-      { label: '파형을 손가락으로 짚는다', eff: { yushi: 2 }, after: [{ t: 'say', who: 'yushi', text: '"거기, 내가 제일 좋아하는 부분이야. …이상하지. 틀리면 어쩌려고."' }]}
-    ]}
-  ],
-  jaehee: [
-    { t: 'narr', text: '한강 다리 아래. 대영이 기타를 안고 앉아 있었다. 오늘은 노래를 부르지 않고 줄만 만지작거렸다.' },
-    { t: 'say', who: 'jaehee', text: '"오늘은 완성했어. 근데 부르기가 무서워. 네 얼굴 보고 부르면 울 것 같아서."' },
-    { t: 'choice', prompt: '"어떻게 할까"', opts: [
-      { label: '등을 돌리고 듣는다', eff: { jaehee: 4 }, after: [{ t: 'narr', text: '(내가 돌아서자, 잠깐의 숨소리 끝에 노래가 시작됐다. 끝까지 흔들리지 않았다.)' }]},
-      { label: '눈을 보고 불러 달라고 한다', eff: { jaehee: 3 }, after: [{ t: 'say', who: 'jaehee', text: '"…알겠어. 대신 너는 안 울어야 해. 나는 네가 울면 무조건 같이 울어."' }]},
-      { label: '오늘은 안 들어도 된다고 한다', eff: { jaehee: 1 }, after: [{ t: 'say', who: 'jaehee', text: '"…응. 그럼 다음에." (기타를 안았다. 안고만 있었다.)' }]}
-    ]}
-  ],
-  ryo: [
-    { t: 'narr', text: '편의점 앞 파라솔. 료가 컵라면 두 개를 사 왔다. 김을 불면서 진지하게 말했다.' },
-    { t: 'say', who: 'ryo', text: '"이게 데이트야? 아니지. 근데 이게 제일 좋아. 나는 이런 게 오래가더라고."' },
-    { t: 'choice', prompt: '"그 말, 장난이야?"', opts: [
-      { label: '진심이면 좋겠다고 한다', eff: { ryo: 4 }, after: [{ t: 'say', who: 'ryo', text: '"…그럼 진심인 걸로 할게." (라면에서 올라오는 김에 얼굴을 숨겼다.)' }]},
-      { label: '웃으면서 넘긴다', eff: { ryo: 2 }, after: [{ t: 'say', who: 'ryo', text: '"또 넘겼네. 나는 진짜인데." (라면을 후루룩 먹었다. 아무 일도 없던 것처럼.)' }]},
-      { label: '라면을 먼저 준다', eff: { ryo: 3 }, after: [{ t: 'narr', text: '(내가 젓가락을 챙겨 주자 그가 잠깐 멈췄다.) "…이런 거, 되게 오래 기억나."' }]}
-    ]}
-  ],
-  sakuya: [
-    { t: 'narr', text: '주방. 사쿠야가 앞치마를 두르고 밀가루를 묻힌 채 서 있었다. 오늘 아침부터 준비한 얼굴이었다.' },
-    { t: 'say', who: 'sakuya', text: '"오늘은 내가 접시까지 할게. 그러니까… 옆에 있어 줘. 도와달라는 건 아니고."' },
-    { t: 'choice', prompt: '(옆에 서면서)', opts: [
-      { label: '반죽을 같이 만진다', eff: { sakuya: 4 }, after: [{ t: 'narr', text: '(손등에 밀가루가 묻었다. 그가 그걸 보고 한참 웃었다. 결국 접시는 절반만 씻었다.)' }]},
-      { label: '의자에 앉아 본다', eff: { sakuya: 3 }, after: [{ t: 'say', who: 'sakuya', text: '"네가 보면 손이 떨려. …그래도 봐 줘. 떨리는 거 들키는 게 낫네."' }]},
-      { label: '먼저 맛을 본다', eff: { sakuya: 3 }, after: [{ t: 'say', who: 'sakuya', text: '"아직 안 익었는데! …근데 맛있지? 그거 내가 맞춘 거야."' }]}
-    ]}
-  ]
+  riku:[{t:'narr',text:'리쿠는 한강 대신 사진관 골목으로 데려갔다. 낡은 즉석사진 부스 앞에서 걸음을 멈췄다.'},{t:'say',who:'riku',text:'"예전엔 사진 찍자고 하면 늘 다음에라고 했잖아. 오늘은 내가 먼저 말할게. 같이 찍을래?"'},{t:'choice',prompt:'사진 부스 앞에서 망설이는 리쿠.',opts:[{label:'나란히 서서 찍는다',eff:{riku:4},after:[{t:'say',who:'riku',text:'"이 사진은 지갑에 넣어 둘게. 잃어버리지 않게."'}]},{label:'리쿠 혼자 찍어 준다',eff:{riku:3},after:[{t:'say',who:'riku',text:'"이번엔 네가 찍어 줬네. 다음에는 둘이 같이 찍자."'}]},{label:'사진 대신 같이 걷자고 한다',eff:{riku:1},after:[{t:'say',who:'riku',text:'"그래. 오늘은 사진보다 네 얘기를 더 듣고 싶어."'}]}]},{t:'say',who:'riku',text:'"그동안 내가 먼저 다가가면 네가 부담스러울까 봐 멈췄어. 사실은 내가 거절당할까 봐 그랬던 것 같아."'}],
+  sion:[{t:'narr',text:'시온은 한강 다리 아래 차를 세우고 편의점 커피를 두 잔 사 왔다.'},{t:'say',who:'sion',text:'"좋은 데 데려가고 싶었는데, 오늘은 여기서 얘기하는 게 나을 것 같았어."'},{t:'say',who:'sion',text:'"헤어지고 나서 생각해 봤어. 내가 안정적인 사람인 척하면서 중요한 말은 계속 미뤘더라."'},{t:'choice',prompt:'시온의 말을 듣고 어떻게 답할까?',opts:[{label:'앞으로는 미루지 말아 달라고 한다',eff:{sion:4},after:[{t:'say',who:'sion',text:'"응. 확신이 생길 때까지 기다리게 하지 않을게. 모르면 모른다고 말하고, 생각은 같이 나눌게."'}]},{label:'나도 서운했던 일을 말한다',eff:{sion:4},after:[{t:'say',who:'sion',text:'"그때 네가 그렇게 느낀 줄 몰랐다는 말로 끝내고 싶지 않아. 내가 놓친 거야."'}]},{label:'오늘은 좋은 기억으로 남기자고 한다',eff:{sion:1},after:[{t:'say',who:'sion',text:'"그래. 오늘 얘기한 건 잊지 않을게. 다음에 또 이야기할 기회가 있었으면 좋겠다."'}]}]}],
+  yushi:[{t:'narr',text:'작은 작업실. 유우시는 완성하지 못한 데모를 틀고 볼륨을 조금 낮췄다.'},{t:'say',who:'yushi',text:'"이 부분에서 계속 멈췄어. 네가 듣고 뭐라고 할지 궁금해서."'},{t:'me',text:'"내가 뭐라고 할지 무서워서 못 끝낸 거야?"'},{t:'say',who:'yushi',text:'"조금은. 근데 네가 좋다고 해 주길 바라는 마음도 있었어."'},{t:'choice',prompt:'곡이 끝난 뒤 유우시가 기다린다.',opts:[{label:'좋았던 부분을 구체적으로 말한다',eff:{yushi:4},after:[{t:'say',who:'yushi',text:'"그 부분은 나도 좋아해. 네가 알아봐 줘서 기분 좋다."'}]},{label:'완성하지 않아도 괜찮다고 한다',eff:{yushi:3},after:[{t:'say',who:'yushi',text:'"고마워. 그래도 이번에는 끝까지 만들어 볼게. 네 반응만 기다리지는 않을 거야."'}]},{label:'다음 곡은 같이 고르자고 한다',eff:{yushi:3},after:[{t:'say',who:'yushi',text:'"좋아. 네가 고른 노래도 듣고 싶어. 서로 하나씩 들려주자."'}]}]}],
+  jaehee:[{t:'narr',text:'대영은 기타를 옆에 두고 강 쪽을 바라봤다. 오늘은 노래를 부르지 않았다.'},{t:'say',who:'jaehee',text:'"내가 힘들 때마다 네가 괜찮냐고 물어봐 줬잖아. 근데 정작 너는 괜찮은지 제대로 물어본 적이 별로 없더라."'},{t:'me',text:'"그때는 나도 어떻게 말해야 할지 몰랐어."'},{t:'say',who:'jaehee',text:'"이제라도 물어볼게. 요즘은 어때? 나 때문에 힘들었던 건 아직 남아 있어?"'},{t:'choice',prompt:'대영이 대답을 기다린다.',opts:[{label:'아직 서운한 마음이 있다고 말한다',eff:{jaehee:4},after:[{t:'say',who:'jaehee',text:'"알겠어. 당장 풀어 달라고 안 할게. 네가 말해 준 거부터 기억할게."'}]},{label:'좋았던 기억도 많다고 말한다',eff:{jaehee:3},after:[{t:'say',who:'jaehee',text:'"나도 그래. 그래서 더 아쉬웠나 봐. 좋은 기억만 붙잡지 말고 잘못한 것도 같이 볼게."'}]},{label:'오늘은 편하게 보내고 싶다고 한다',eff:{jaehee:1},after:[{t:'say',who:'jaehee',text:'"좋아. 오늘은 그냥 같이 걷자. 얘기하고 싶어질 때까지 기다릴게."'}]}]}],
+  ryo:[{t:'narr',text:'옥상 계단. 료는 캔 두 개를 사 왔지만 하나를 바로 건네지 않고 손에 들고 있었다.'},{t:'say',who:'ryo',text:'"나 웃기는 거 좋아해. 근데 네가 진지한 얘기 꺼낼 때마다 농담으로 넘긴 건 미안해."'},{t:'me',text:'"그때는 내가 혼자 진지한 사람 같았어."'},{t:'say',who:'ryo',text:'"그렇게 느꼈겠다. 나도 겁났어. 분위기 망칠까 봐 웃겼는데, 결국 네 말할 기회를 뺏은 거네."'},{t:'choice',prompt:'료가 캔을 내민다.',opts:[{label:'앞으로는 끝까지 들어 달라고 한다',eff:{ryo:4},after:[{t:'say',who:'ryo',text:'"약속할게. 농담은 나중에 하고, 네 말부터 들을게."'}]},{label:'서로 편하게 말하자고 한다',eff:{ryo:3},after:[{t:'say',who:'ryo',text:'"좋아. 나도 싫은 건 싫다고 말할게. 웃으면서 얼버무리지 않을게."'}]},{label:'오늘은 웃으면서 보내자고 한다',eff:{ryo:1},after:[{t:'say',who:'ryo',text:'"그럼 오늘은 진짜 재밌게 놀자. 네가 웃으면 나도 좋으니까."'}]}]}],
+  sakuya:[{t:'narr',text:'사쿠야는 작은 베이커리 앞에서 멈춰 섰다. 직접 만든 쿠키를 종이봉투에 담아 왔다.'},{t:'say',who:'sakuya',text:'"이번에는 내가 먼저 골랐어. 네가 좋아할 것 같아서 만들었는데, 입맛에 안 맞으면 솔직히 말해 줘."'},{t:'me',text:'"예전엔 늘 나한테 정하라고 했잖아."'},{t:'say',who:'sakuya',text:'"응. 네가 고르면 편했어. 틀릴 일이 없다고 생각했거든. 근데 그게 네가 다 정해야 한다는 뜻은 아니었는데."'},{t:'choice',prompt:'쿠키를 한 입 먹고 답한다.',opts:[{label:'다음에는 네가 가고 싶은 곳도 가자고 한다',eff:{sakuya:4},after:[{t:'say',who:'sakuya',text:'"좋아. 다음엔 내가 장소도 정할게. 네가 싫으면 다른 데로 바꾸면 되니까."'}]},{label:'맛있다고 솔직하게 말한다',eff:{sakuya:3},after:[{t:'say',who:'sakuya',text:'"다행이다. 다음에는 더 잘 만들게. 오늘은 네가 먹어 준 것만으로도 좋아."'}]},{label:'서로 취향을 알아가자고 한다',eff:{sakuya:3},after:[{t:'say',who:'sakuya',text:'"응. 내가 좋아하는 것도 알려 줄게. 네가 좋아하는 것만 따라 하지 않을게."'}]}]}]
 };
 
 /* ---- Day 4 : X와의 2차 데이트 ---- */
@@ -2262,107 +2211,22 @@ var XDATES4 = {
 
 /* ---- Day 6 : 비밀 대화 ---- */
 var SECRET = {
-  riku: [
-    { t: 'narr', text: '옥상. 리쿠가 먼저 와 있었다. 이 집에서 그가 먼저 기다린 건 처음이었다.' },
-    { t: 'say', who: 'riku', text: '"내일이면 끝이네."' },
-    { t: 'me', text: '"끝은 아니야."' },
-    { t: 'say', who: 'riku', text: '"그걸 내가 믿어도 돼?" (담배를 꺼냈다가 다시 넣었다. 내 앞이라서.)' },
-    { t: 'choice', prompt: '"뭐라고 할까"', opts: [
-      { label: '"믿어"라고 한다', eff: { riku: 4 }, after: [{ t: 'say', who: 'riku', text: '"…알겠어. 그럼 내일, 내가 먼저 갈게. 이번엔 늦지 않고."' }]},
-      { label: '대답 대신 손을 잡는다', eff: { riku: 4 }, after: [{ t: 'narr', text: '(그가 손을 내려다봤다. 그리고 작게 웃었다.) "이런 건 반칙이라니까."' }]},
-      { label: '웃기만 한다', eff: { riku: 0 }, after: [{ t: 'say', who: 'riku', text: '"…웃으면 모르잖아." (시선을 내렸다. 조금 늦게.)' }]}
-    ]}
-  ],
-  sion: [
-    { t: 'narr', text: '1층 작은 방. 시온이 두 잔을 따라 놓았다. 한 잔은 이미 식어 있었다. 기다린 흔적이었다.' },
-    { t: 'say', who: 'sion', text: '"나는 결정을 미루는 사람을 별로 안 좋아해. 근데 요즘 내가 그러네."' },
-    { t: 'say', who: 'sion', text: '"이유를 말하면 변명 같고, 안 말하면 겁쟁이 같고. 그래서 이 자리에 앉혔어."' },
-    { t: 'choice', prompt: '"변명이어도 들을게"', opts: [
-      { label: '다 들을게', eff: { sion: 4 }, after: [{ t: 'say', who: 'sion', text: '"…네가 아프면 나도 아픈데, 그게 요즘 제일 무서워. 혼자 아픈 게 익숙했으니까."' }]},
-      { label: '먼저 내 마음을 말한다', eff: { sion: 4 }, after: [{ t: 'narr', text: '(내가 말을 마치자 그가 오래 침묵했다. 그리고 잔을 내려놓았다.) "…그럼 나도, 정해야겠네."' }]},
-      { label: '식은 잔을 마신다', eff: { sion: 3 }, after: [{ t: 'say', who: 'sion', text: '"그거 식었는데." (새로 따라 주면서 작게 웃었다.) "이번엔 내가 먼저 마실게."' }]}
-    ]}
-  ],
-  yushi: [
-    { t: 'narr', text: '테라스. 유우시가 이어폰을 건넸다. 이번엔 두 쪽 다.' },
-    { t: 'say', who: 'yushi', text: '"오늘은 다 들어. 내가 듣던 소리랑, 새로 만든 소리랑."' },
-    { t: 'narr', text: '(같은 곡이 양쪽에서 조금씩 다르게 흘렀다. 한쪽은 낮고, 한쪽은 조금 늦었다.)' },
-    { t: 'choice', prompt: '"어느 쪽이 진짜야?"', opts: [
-      { label: '둘 다 진짜라고 한다', eff: { yushi: 4 }, after: [{ t: 'say', who: 'yushi', text: '"…그렇게 들어주는 사람은 처음이야. 원래는 하나만 진짜여야 하는데."' }]},
-      { label: '늦은 쪽이 좋다고 한다', eff: { yushi: 4 }, after: [{ t: 'say', who: 'yushi', text: '"그거, 내 쪽이야. 늦게 도착하는 소리. …나는 늘 늦어서."' }]},
-      { label: '이어폰을 뺀다', eff: { yushi: 2 }, after: [{ t: 'say', who: 'yushi', text: '"…응. 소리보다 지금 이게 낫지." (조용히 웃었다.)' }]}
-    ]}
-  ],
-  jaehee: [
-    { t: 'narr', text: '계단참. 대영이 앉아 있었다. 기타는 없었다. 손을 어디에 둘지 몰라 무릎을 만지작거렸다.' },
-    { t: 'say', who: 'jaehee', text: '"오늘은 노래 없이 말해 볼게. 노래로 하면 다 예뻐져서."' },
-    { t: 'say', who: 'jaehee', text: '"나 요즘 하루에 한 번은 생각해. 그날 내가 조금만 덜 서툴렀으면, 우리 아직 사귀고 있지 않았을까."' },
-    { t: 'choice', prompt: '"그 말에"', opts: [
-      { label: '서툴러서 좋았다고 한다', eff: { jaehee: 4 }, after: [{ t: 'narr', text: '(그가 고개를 들었다. 눈이 빨개져 있었다.) "…그 말, 진짜지? 지금 장난 아니지?"' }]},
-      { label: '같이 생각한다고 말한다', eff: { jaehee: 4 }, after: [{ t: 'say', who: 'jaehee', text: '"…그럼 나 혼자 이상한 사람 아니네. 다행이다." (웃다가 코를 훌쩍였다.)' }]},
-      { label: '대답하지 않는다', eff: { jaehee: 1 }, after: [{ t: 'say', who: 'jaehee', text: '"…괜찮아. 대답 안 해도 돼. 나는 그냥 말하고 싶었어." (일어나 먼저 내려갔다.)' }]}
-    ]}
-  ],
-  ryo: [
-    { t: 'narr', text: '주방. 료가 물을 마시다 말고 컵을 내려놨다. 오늘은 웃지 않았다.' },
-    { t: 'say', who: 'ryo', text: '"나 지금 되게 진지해. 그러니까 웃지 마."' },
-    { t: 'say', who: 'ryo', text: '"내가 너 좋아하는 거, 티 많이 났지? 숨기려고 했는데. 나는 숨기는 게 원래 안 되는 사람이야."' },
-    { t: 'choice', prompt: '"뭐라고 할까"', opts: [
-      { label: '나도 좋다고 한다', eff: { ryo: 4 }, after: [{ t: 'narr', text: '(그가 아무 말도 못 했다. 컵을 들었다 놨다 하다가 결국 웃었다.) "…이거, 이렇게 갑자기 말하면 어떡해."' }]},
-      { label: '알고 있었다고 한다', eff: { ryo: 3 }, after: [{ t: 'say', who: 'ryo', text: '"…역시. 나 진짜 티 많이 났구나. 창피해. 근데 안 숨길래."' }]},
-      { label: '웃으면서 넘긴다', eff: { ryo: 0 }, after: [{ t: 'say', who: 'ryo', text: '"…하지 말라니까." (컵을 개수대에 놓았다. 소리가 조금 컸다.)' }]}
-    ]}
-  ],
-  sakuya: [
-    { t: 'narr', text: '정원. 사쿠야가 벤치에 앉아 있었다. 무릎에 손을 올리고 바르게 앉아 있었다.' },
-    { t: 'say', who: 'sakuya', text: '"나 오늘 하루 종일 생각했어. 그거… 말해도 돼?"' },
-    { t: 'say', who: 'sakuya', text: '"나, 네가 다른 사람 고르면 축하해 줄 자신 있어. 근데 그거 하루만 하고 싶어. 그 다음 날부터는 못 할 것 같아."' },
-    { t: 'choice', prompt: '"그 말에"', opts: [
-      { label: '축하받지 않아도 된다고 한다', eff: { sakuya: 4 }, after: [{ t: 'narr', text: '(그가 고개를 들었다. 천천히 표정이 풀렸다.) "…그럼 나 오늘 밤에 잘 잘 수 있겠다."' }]},
-      { label: '울컥해서 아무 말도 못 한다', eff: { sakuya: 4 }, after: [{ t: 'say', who: 'sakuya', text: '"울지 마. 내가 더 울 것 같으니까. …아, 늦었네." (손으로 얼굴을 가렸다.)' }]},
-      { label: '고맙다고만 한다', eff: { sakuya: 1 }, after: [{ t: 'say', who: 'sakuya', text: '"…응. 고맙다는 말, 좋아." (웃었다. 이 집에서 가장 잘 만든 웃음이었다.)' }]}
-    ]}
-  ]
+  riku:[{t:'narr',text:'옥상. 리쿠는 난간에서 조금 떨어진 곳에 서 있었다. 먼저 와 있었지만 카메라는 꺼내지 않았다.'},{t:'say',who:'riku',text:'"내일이면 선택해야 하네. 아직도 무슨 말을 해야 할지 모르겠어."'},{t:'me',text:'"모르는 채로 와도 돼. 대신 피하지는 말아 줘."'},{t:'say',who:'riku',text:'"그건 할 수 있어. 예전에는 네가 먼저 말 걸어 주길 기다렸는데, 이번엔 내가 먼저 할게."'},{t:'choice',prompt:'리쿠가 조심스럽게 손을 내민다.',opts:[{label:'손을 잡는다',eff:{riku:4},after:[{t:'say',who:'riku',text:'"내일도 이렇게 먼저 잡아도 돼? 대답은 내일 들어도 돼."'}]},{label:'내일 직접 얘기하자고 한다',eff:{riku:3},after:[{t:'say',who:'riku',text:'"응. 그때는 카메라 뒤에 숨지 않을게."'}]},{label:'지금은 시간이 더 필요하다고 한다',eff:{riku:1},after:[{t:'say',who:'riku',text:'"알겠어. 기다린다고 재촉하지 않을게. 네가 정할 시간도 필요하니까."'}]}]}],
+  sion:[{t:'narr',text:'1층 작은 방. 시온은 차 두 잔을 준비해 뒀다. 이번에는 식기 전에 먼저 말을 꺼냈다.'},{t:'say',who:'sion',text:'"나는 내일 어떤 선택을 하든 후회하지 않으려고 해. 그래서 오늘은 미뤄 둔 얘기를 하고 싶어."'},{t:'say',who:'sion',text:'"좋아한다는 말을 아끼면 상대가 알아서 알 거라고 생각했어. 그건 배려가 아니라 내 편한 쪽을 택한 거였어."'},{t:'choice',prompt:'시온의 고백에 어떻게 답할까?',opts:[{label:'앞으로는 말로도 표현해 달라고 한다',eff:{sion:4},after:[{t:'say',who:'sion',text:'"그럴게. 표현하는 걸 연습하겠다는 말로 끝내지 않을게. 오늘부터 할게."'}]},{label:'나도 마음을 숨긴 적 있다고 말한다',eff:{sion:3},after:[{t:'say',who:'sion',text:'"그랬구나. 서로 말하지 않으면 알 수 없다는 걸 이제야 제대로 알겠네."'}]},{label:'내일 결정은 내일 하자고 한다',eff:{sion:1},after:[{t:'say',who:'sion',text:'"좋아. 오늘 대화가 답을 정해 주진 않아도, 적어도 피하지는 않았네."'}]}]}],
+  yushi:[{t:'narr',text:'테라스. 유우시는 이어폰을 건네지 않고 휴대전화에 저장된 곡을 먼저 틀었다.'},{t:'say',who:'yushi',text:'"이건 네가 떠난 뒤에 만든 곡이야. 예전처럼 네가 알아서 이해해 주길 바라면서 만든 건 아니고, 그냥 내가 하고 싶었던 말을 넣었어."'},{t:'me',text:'"무슨 말을 하고 싶었는데?"'},{t:'say',who:'yushi',text:'"보고 싶었다고. 그리고 미안했다고. 그 두 개를 한 번에 말하기가 어려웠어."'},{t:'choice',prompt:'유우시가 곡을 멈추고 바라본다.',opts:[{label:'나도 보고 싶었다고 말한다',eff:{yushi:4},after:[{t:'say',who:'yushi',text:'"그 말 듣고 싶었어. 그래도 그 말만 믿고 다 괜찮아졌다고 생각하진 않을게."'}]},{label:'미안하다는 말보다 달라진 행동을 보고 싶다고 한다',eff:{yushi:4},after:[{t:'say',who:'yushi',text:'"맞아. 말로 끝내면 또 똑같아지겠지. 이번에는 내가 먼저 물어보고 대답할게."'}]},{label:'아직 잘 모르겠다고 말한다',eff:{yushi:1},after:[{t:'say',who:'yushi',text:'"알겠어. 지금 답을 정해 달라는 뜻은 아니었어. 내 마음은 제대로 말하고 싶었어."'}]}]}],
+  jaehee:[{t:'narr',text:'계단참. 대영은 기타를 방에 두고 왔다. 손을 무릎 위에 올려놓고 몇 번이나 말을 고쳤다.'},{t:'say',who:'jaehee',text:'"내일 네가 누구를 고르든 받아들일게. 그래도 오늘은 내가 잘못했던 걸 직접 말하고 싶어."'},{t:'say',who:'jaehee',text:'"힘들다는 말만 하면서 네가 힘든지는 잘 안 물어봤어. 네가 나를 달래 주는 게 당연해졌던 것 같아. 미안해."'},{t:'choice',prompt:'대영의 말을 듣고 답한다.',opts:[{label:'고마웠던 순간도 있었다고 말한다',eff:{jaehee:3},after:[{t:'say',who:'jaehee',text:'"그 말 고마워. 좋은 기억이 있다고 해서 내가 잘못한 일이 없어지는 건 아니니까, 그건 계속 기억할게."'}]},{label:'아직 상처가 남았다고 말한다',eff:{jaehee:4},after:[{t:'say',who:'jaehee',text:'"응. 그럴 수 있어. 용서해 달라고 하려고 꺼낸 얘기는 아니야. 네가 말해 줘서 고마워."'}]},{label:'내일 다시 얘기하자고 한다',eff:{jaehee:1},after:[{t:'say',who:'jaehee',text:'"알겠어. 내일은 내가 먼저 찾아갈게. 오늘 얘기한 걸 모른 척하지 않을게."'}]}]}],
+  ryo:[{t:'narr',text:'주방. 료는 캔을 따려다 멈추고 테이블 위에 내려놓았다.'},{t:'say',who:'ryo',text:'"오늘은 장난 안 할게. 네가 진지하게 얘기할 때 내가 웃어넘긴 거, 아직도 미안해."'},{t:'me',text:'"왜 그랬어?"'},{t:'say',who:'ryo',text:'"내가 진지해지면 네가 부담스러워할까 봐. 사실은 내가 상처받을까 봐 먼저 웃은 거였어."'},{t:'choice',prompt:'료가 네 대답을 기다린다.',opts:[{label:'앞으로는 솔직하게 말해 달라고 한다',eff:{ryo:4},after:[{t:'say',who:'ryo',text:'"응. 무서워도 말할게. 네가 듣기 싫으면 그때 말해 줘. 혼자 결론 내리지는 않을게."'}]},{label:'나도 농담으로 피한 적 있다고 한다',eff:{ryo:3},after:[{t:'say',who:'ryo',text:'"그랬구나. 우리 둘 다 그랬네. 이번에는 한 번쯤 제대로 얘기해 보자."'}]},{label:'아직 마음을 정하지 못했다고 한다',eff:{ryo:1},after:[{t:'say',who:'ryo',text:'"괜찮아. 오늘 대답 듣자고 부른 건 아니야. 그냥 내 마음은 숨기기 싫었어."'}]}]}],
+  sakuya:[{t:'narr',text:'정원 벤치. 사쿠야는 작은 종이봉투를 무릎 위에 올려놓았다.'},{t:'say',who:'sakuya',text:'"내가 늘 네가 정해 주는 대로 했던 거, 이제는 왜 그랬는지 알 것 같아. 틀릴까 봐 겁났어."'},{t:'me',text:'"틀려도 괜찮았는데."'},{t:'say',who:'sakuya',text:'"응. 근데 그때는 네가 실망하는 게 무서워서 아무것도 안 정했어. 이제는 내가 원하는 것도 말해 볼게."'},{t:'choice',prompt:'사쿠야가 봉투를 건넨다.',opts:[{label:'앞으로는 서로 원하는 걸 말하자고 한다',eff:{sakuya:4},after:[{t:'say',who:'sakuya',text:'"좋아. 나도 네가 뭘 원하는지 물어볼게. 혼자 맞히려고 하지 않을게."'}]},{label:'봉투를 받아 열어 본다',eff:{sakuya:3},after:[{t:'say',who:'sakuya',text:'"쿠키야. 이번엔 네 취향대로 덜 달게 만들었어. 먹어 보고 솔직하게 말해 줘."'}]},{label:'아직은 잘 모르겠다고 한다',eff:{sakuya:1},after:[{t:'say',who:'sakuya',text:'"응. 내일 당장 답 안 해도 돼. 그래도 내가 먼저 말한 건 기억해 줘."'}]}]}]
 };
 
 /* ---- 밤에 받는 문자 ---- */
 var RECV = {
-  riku: [
-    '물은 마셨어? 오늘 목소리 갈라져 있던데.',
-    '사진 하나 보낼게. 오늘 찍은 거. …지워 달라고 하면 지울게.',
-    '현관 불 끄고 다니지 마. 무섭다니까.',
-    '내일 아침 커피는 내가 먼저 내릴게. 그러니까 조금 늦게 나와.'
-  ],
-  sion: [
-    '다들 잘 챙겼는지 확인하다가, 나만 안 챙긴 걸 알았어. 웃기지.',
-    '창문 잠갔는지 한 번만 더 봐 줄래? 내가 확인했는데 또 확인하고 싶어서.',
-    '네가 조용히 웃는 게 좋아. 그건 그냥 하는 말이야.',
-    '약 먹을 시간이야. 물은 옆에 두고.'
-  ],
-  yushi: [
-    '오늘 밤 빛이 이상해. 창밖을 한 번 봐.',
-    '이어폰 찾았어. 아직 내 쪽에는 한 개 남았지만.',
-    '네가 조용할 때 무슨 생각 하는지 가끔 알고 싶어. 오늘은 특히.',
-    '잘 자. 라고 쓰고 지우고 다시 썼어. 세 번.'
-  ],
-  jaehee: [
-    '오늘 즐거웠어. 이 말 하려고 문자 보내는 거야. 진짜로.',
-    '방금 기타 줄 끊어졌어. 하루에 한 번은 뭔가 끊어져, 나는.',
-    '내일 아침에 뭐 먹고 싶어? 내가 해볼게. 못 하면 사올게.',
-    '아까 많이 웃었는데, 그거 내가 웃긴 거 맞지? 확인만 하려고.'
-  ],
-  ryo: [
-    '지금 뭐 해. 심심하면 나와. 거실에 나만 있어.',
-    '오늘 내가 웃긴 거야? 아니면 네가 웃어 준 거야? 그거 되게 달라서.',
-    'TV 소리 줄여 줄까? 아니면 같이 볼까. 후자가 좋아.',
-    '내일, 되게 아무렇지 않은 얼굴로 인사할게. 어색한 거 싫어하는 것 같아서.'
-  ],
-  sakuya: [
-    '냉장고에 푸딩 넣어뒀어. 제일 위 칸. 다른 사람 주면 안 돼.',
-    '오늘 네가 맛있다고 했을 때 손이 떨렸어. 진짜야.',
-    '잘 때 이불 다 차고 자? 나는 발이 나와 있어. 이상한 얘기네.',
-    '내일도 너 웃게 만들고 싶어. 그거 하나만 생각하고 자.'
-  ]
+  riku:['오늘 사진 정리하다가 네가 웃는 컷을 봤어. 보내도 될까?','아까 말하려다 못 한 게 있어. 내일 시간 되면 얘기하자.','잠은 잘 자고 있어? 늦게까지 깨어 있지 말고.','내일 아침에 커피 내려 둘게. 마실 거면 말해 줘.'],
+  sion:['오늘 얘기 들어 줘서 고마워. 나도 다음엔 먼저 물어볼게.','내일 일정 확인했어. 아침에 춥다니까 겉옷 챙겨.','아까 네가 했던 말 계속 생각하고 있어. 대충 넘기고 싶지 않아.','잘 자. 내일은 먼저 인사할게.'],
+  yushi:['오늘 들려준 곡 파일 보내도 돼? 네가 듣고 싶을 때 들어.','아까 네가 고른 음반 찾아봤어. 생각보다 좋더라.','말로 바로 대답 못 해서 미안. 생각 정리해서 다시 얘기할게.','잘 자. 오늘은 이어폰 빼고 잘 거야.'],
+  jaehee:['오늘 네 얘기 들을 수 있어서 좋았어. 다음엔 내가 먼저 물어볼게.','기타 줄 갈았어. 내일은 네가 듣고 싶은 곡 연습해 갈게.','아까 미안하다는 말만 한 것 같아서. 고맙다는 말도 하고 싶었어.','잘 자. 답장 늦어도 괜찮아. 그냥 보내고 싶었어.'],
+  ryo:['오늘은 농담 하나도 안 하고 보냈네. 생각보다 괜찮았어.','아까 네가 웃은 거 나 때문이면 좋겠다. 아니어도 뭐, 좋았어.','내일 어디 가고 싶은지 생각해 봤어? 네가 고르면 따라갈게.','잘 자. 내일은 진짜 먼저 인사한다.'],
+  sakuya:['냉장고에 쿠키 넣어 뒀어. 네가 먹고 싶은 만큼 먹어.','오늘 네가 해 준 말 기억할게. 나도 내 생각 말해 볼게.','다음에는 내가 장소 정해도 돼? 가 보고 싶은 데가 있어.','잘 자. 내일 아침엔 내가 먼저 일어나 볼게.']
 };
 
 /* ---- 거실 진실게임 ---- */
@@ -2504,29 +2368,16 @@ var WALK = {
 
 /* 메기녀의 마지막 승부수 */
 var SUA_LAST = [
-  { t: 'narr', text: '(돗자리로 돌아오니 수아가 혼자 앉아 있었다. 다른 사람들은 강 쪽으로 걸어 나갔다.)' },
-  { t: 'say', who: 'sua', text: '잠깐 얘기해도 돼? 오늘은 돌려 말하고 싶지 않아서.' },
-  { t: 'narr', text: '(손에 든 컵을 내려놓았다. 손가락이 컵 가장자리를 한 번 훑고 내려갔다.)' },
-  { t: 'say', who: 'sua', text: '나도 그 사람한테 마음 있어. 네 마음이 정해진 것처럼 보여도 난 쉽게 물러날 생각 없어.' },
-  { t: 'narr', text: '(이 사람이 이렇게 조심스러운 건 처음이었다. 정확하게만 말하던 사람이 오늘은 말끝을 흐렸다.)' },
-  { t: 'say', who: 'sua', text: '늦게 들어왔다고 가능성까지 늦게 생기는 건 아니잖아. 그 사람이 날 알아볼 기회는 내가 만들 거야.' },
-  { t: 'narr', text: '(말하고 나서 나를 봤다. 미안해하지 않았다. 그게 제일 세게 때렸다.)' }
+  {t:'narr',text:'돗자리로 돌아오자 수아가 빈자리에 앉아 있었다. 손에 든 컵은 이미 식어 있었다.'},
+  {t:'say',who:'sua',text:'잠깐 얘기할래? 나 오늘은 애매하게 웃고 넘기고 싶지 않아.'},
+  {t:'say',who:'sua',text:'나도 그 사람한테 마음 있어. 네가 먼저 알던 사이라는 건 알아. 그래도 내가 느끼는 마음까지 없던 일처럼 하진 않을 거야.'},
+  {t:'say',who:'sua',text:'늦게 들어왔으니까 더 조심해야 한다고 생각했는데, 그러다 아무것도 못 하고 끝날 것 같더라. 그래서 직접 물어보려고.'},
+  {t:'narr',text:'수아는 내 표정을 살폈다. 밀어붙이려는 얼굴이라기보다, 자기 마음을 제대로 전하고 싶은 얼굴이었다.'}
 ];
 var SUA_OPTS = [
-  { label: '솔직하게, 정확하게 말해 준다', eff: { x: 0 }, say: '"내 마음은 이미 정해져 있어. 미안해."', after: [
-    { t: 'say', who: 'sua', text: '알겠어. 적어도 애매하게 기대하게 만들지는 않네. 그건 고마워. 그래도 내 마음은 내가 정리할게.' },
-    { t: 'narr', text: '(고개를 끄덕였다. 눈이 조금 붉었다. 그래도 웃고 있었다.)' },
-    { t: 'say', who: 'sua', text: '그래도 마음이 바뀌면 나한테 먼저 말해. 기회가 오면 이번엔 놓치지 않을 거니까.' }
-  ]},
-  { label: '미안하다고만 말한다', eff: { x: -1 }, say: '"…미안해."', after: [
-    { t: 'say', who: 'sua', text: '미안하다는 말로 끝낼 생각은 아니지? 난 네 대답을 듣고 싶어.' },
-    { t: 'narr', text: '(작게 웃었다. 그리고 컵을 들어 내 쪽으로 아주 조금 기울였다. 건배하자는 것도 아니면서.)' },
-    { t: 'say', who: 'sua', text: '알겠어. 오늘은 여기서 물러날게. 그렇다고 포기했다는 뜻은 아니야.' }
-  ]},
-  { label: '아무 말 없이 웃기만 한다', eff: { x: -3 }, say: '(아무 말 없이 웃었다)', after: [
-    { t: 'say', who: 'sua', text: '대답은 안 하고 웃기만 하네. 편하겠다. 난 그런 식으로 넘어갈 생각 없어.' },
-    { t: 'narr', text: '(수아가 한참 기다리다가 컵을 들었다. 그게 이 사람이 물러서는 방식이었다. 물러서면서도 시선은 안 뗐다.)' }
-  ]}
+  {label:'내 마음은 이미 정해졌다고 말한다',eff:{x:0},say:'"내 마음은 이미 정해져 있어. 미안해."',after:[{t:'say',who:'sua',text:'"알겠어. 분명하게 말해 줘서 고마워. 나도 이제 네 대답을 기다리기보다는 내 마음을 정리할게."'},{t:'narr',text:'수아는 잠깐 입술을 깨물었다가 고개를 끄덕였다.'}]},
+  {label:'아직 결정하지 못했다고 말한다',eff:{x:-1},say:'"아직은 잘 모르겠어. 조금 더 생각하고 싶어."',after:[{t:'say',who:'sua',text:'"그럼 나도 기다릴게. 다만 아무 말 없이 기대하게 하지는 말아 줘. 나도 내 선택을 해야 하니까."'}]},
+  {label:'대답을 피하지 않고 미안하다고 말한다',eff:{x:-2},say:'"미안해. 네 마음을 알면서도 대답을 미뤘어."',after:[{t:'say',who:'sua',text:'"사과는 받을게. 하지만 미안하다는 말이 대답은 아니잖아. 네가 정리되면 그때 정확히 말해 줘."'}]}
 ];
 
 /* X가 먼저 불러낸 저녁 산책 */
@@ -2717,30 +2568,30 @@ var D5_EVE = {
 
 /* Day 6 아침 — 마지막 하루 */
 var DAY6_MORN = [
-  { t: 'narr', text: '여섯째 날 아침. 집이 유난히 조용했다. 어디선가 지퍼 올리는 소리가 나고, 또 어디선가 테이프 뜯는 소리가 났다.' },
-  { t: 'narr', text: '(캐리어 두 개가 현관에 세워져 있었다. 아직 다들 짐을 다 싸지 않았다는 뜻이었다. 아니면, 싸 놓고 안 나오는 거거나.)' },
-  { t: 'say', who: 'seoyeon', text: '"오늘 밤이 마지막 밤이야. 내일은… 다들 알지."' },
-  { t: 'say', who: 'chaewon', text: '"그런 말 하면 분위기 확 죽잖아. 아침부터." (그러면서 채원이 제일 먼저 울 것 같은 얼굴을 했다.)' }
+  {t:'narr',text:'마지막 전날 아침. 다들 평소보다 늦게 주방에 내려왔다. 식탁에는 어제 남은 과일과 식빵이 놓여 있었다.'},
+  {t:'say',who:'chaewon',text:'"내일이면 진짜 끝이네. 짐은 다 쌌어? 난 아직 하나도 못 했어."'},
+  {t:'say',who:'seoyeon',text:'"오늘은 괜히 바쁘게 굴지 말고, 하고 싶은 말 있으면 하고 지내자."'},
+  {t:'narr',text:'X가 커피를 내리다가 네 잔을 따로 꺼냈다. 설탕을 넣지 않는 것도 기억하고 있었다.'}
 ];
 
 /* Day 6 아침 — X */
 var DAY6_AM = {
-  riku: '"짐 다 쌌어? …나는 아직 안 쌌어. 오늘 밤이 지나야 쌀 수 있을 것 같아." (컵을 두 손으로 감쌌다.)',
-  sion: '"마지막 아침이네. …이 집 커피는 내가 제일 잘 내리는 것 같아. 오늘은 두 잔 내릴게."',
-  yushi: '"어제 밤에 소리가 하나 더 생겼어. 네가 계단 오르는 소리. 그거 녹음하고 싶었는데, 못 했어."',
-  jaehee: '"오늘 아침에는 안 울려고 했는데, 벌써 목이 이상해. 아침부터 이러면 밤에는 어떡하지."',
-  ryo: '"나 어제 농담 안 한 거, 오늘도 이어갈까 봐 무서워. 이러다 진짜 재미없는 사람 되면 어떡해."',
-  sakuya: '"오늘 아침에 마들렌 구웠어. 마지막이라서, 여섯 개. 다 나눠 주려고. …하나는 내가 먹었어."'
+  riku:'"커피 괜찮아? 예전처럼 진하게 내렸어. 싫으면 다시 내려 줄게."',
+  sion:'"오늘은 일정 비워 뒀어. 네가 얘기하고 싶은 게 있으면 시간 충분히 낼게."',
+  yushi:'"오늘은 음악 안 틀었어. 아침엔 네 목소리부터 듣고 싶어서."',
+  jaehee:'"어제 네가 한 말 생각해 봤어. 오늘은 내 얘기보다 네 얘기 먼저 듣고 싶어."',
+  ryo:'"마지막 아침이라고 생각하니까 좀 이상하다. 그래도 오늘은 평소처럼 지내 보자."',
+  sakuya:'"빵 구워 왔어. 이번엔 안 탔어. 먼저 먹어 보고 솔직하게 말해 줘."'
 };
 
 /* Day 7 아침 — X */
 var DAY7_AM = {
-  riku: '"마지막 날엔 사진 안 찍어. …아니, 한 장은 찍을 거야. 오늘은 내가 먼저 부탁할게."',
-  sion: '"짐은 내가 내릴게. 계단이 좁으니까. …첫날에도 그랬지. 그때는 그 말밖에 못 했어."',
-  yushi: '"오늘은 이어폰 안 가져왔어. 마지막은 그냥, 목소리로 듣고 싶어서."',
-  jaehee: '"나 오늘 노래 안 할 거야. 부르면 울어서. …아, 이미 우는구나. 미안."',
-  ryo: '"오늘은 농담 준비 안 했어. 준비하면 또 할 것 같아서. 그냥 있는 그대로 있을게."',
-  sakuya: '"오늘은 내가 정했어. 아침 메뉴도, 마지막 인사도. …이번엔 안 미룰게."'
+  riku:'"오늘은 카메라 안 가져왔어. 네가 어떤 표정으로 나갈지 직접 보고 싶어서."',
+  sion:'"마지막 날이네. 오늘은 해야 할 말 미루지 않을게."',
+  yushi:'"어젯밤 곡 마무리했어. 제목은 아직 못 정했지만, 끝까지 만들었어."',
+  jaehee:'"오늘은 노래로 대신하지 않을게. 네가 어떤 선택을 하든 직접 듣고 싶어."',
+  ryo:'"오늘만큼은 농담으로 넘어가지 않을게. 나도 내 마음 제대로 말할 거야."',
+  sakuya:'"오늘은 내가 먼저 정할게. 누구를 부를지, 무슨 말을 할지."'
 };
 
 /* Day 4 아침 — X */
@@ -2778,18 +2629,13 @@ var EXTRA_NIGHT = {
 
 /* 메기녀 합류 */
 var CAT_ARRIVE_HEAD = [
-  { t: 'sys', text: '늦은 저녁, 초인종이 울렸습니다.' },
-  { t: 'narr', text: '문이 열리고, 처음 보는 사람이 서 있었다. 캐리어가 아니라 작은 가방 하나. 이 집에 늦게 온 사람의 짐처럼 보였다.' },
-  { t: 'say', who: 'sua', text: '안녕하세요. 배수아예요. 오늘부터 같이 지내게 됐어요.' },
-  { t: 'say', who: 'sua', text: '아, 다들 말 놓기로 했어요? 그럼 저도 편하게 말할게요. 대신 저도 할 말은 확실히 할게요.' },
-  { t: 'narr', text: '(웃으면서 방 안을 한 번 훑었다. 인사보다 사람을 세는 눈이 먼저였다.)' },
-  { t: 'say', who: 'sua', text: '늦게 와서 미안해. 대신 한 가지는 먼저 말할게. 문 열자마자 마음에 걸리는 사람이 생겼어.' },
-  { t: 'say', who: 'seoyeon', text: '뭐가 죄송해! 들어와. 자리 하나 남아 있었어.' },
-  { t: 'narr', text: '(수아의 시선이 테이블을 한 바퀴 돌았다. 그리고 X의 옆자리에서 멈췄다. 한 치도 틀리지 않게.)' },
-  { t: 'say', who: 'sua', text: '여기 앉을게.' },
-  { t: 'narr', text: '(묻지도 않고 걸어갔다. 이 사람은 허락을 기다리지 않는다.)' },
-  { t: 'say', who: 'sua', text: '내가 여기 앉는 게 불편하면 말해. 그래도 난 안 옮길 거야.' },
-  { t: 'narr', text: '(그 말을 하면서 수아가 나를 봤다. 웃고 있었다. 도발이라는 걸 숨기지 않는 웃음이었다.)' }
+  {t:'sys',text:'늦은 저녁, 초인종이 울렸습니다.'},
+  {t:'narr',text:'서연이 현관문을 열었다. 낯선 여자가 작은 캐리어를 끌고 서 있었다.'},
+  {t:'say',who:'sua',text:'"안녕하세요. 배수아예요. 늦게 합류하게 됐어요. 잘 부탁해요."'},
+  {t:'say',who:'seoyeon',text:'"어서 와요. 짐부터 안에 두고 천천히 인사해요."'},
+  {t:'narr',text:'수아는 한 사람씩 눈을 맞추며 인사했다. 마지막으로 X 앞에 섰을 때 잠깐 시선이 머물렀다.'},
+  {t:'say',who:'sua',text:'"처음 뵙는데 낯이 익네요. 혹시 전에 어디서 본 적 있어요?"'},
+  {t:'narr',text:'X는 바로 대답하지 않았다. 수아는 더 묻지 않고 빈자리에 앉았다.'}
 ];
 
 /* 수아가 X 옆에 앉았을 때 X의 반응 */
@@ -2804,11 +2650,10 @@ var CAT_XSEE = {
 
 /* 수아가 테이블에다 대고 주인공을 찌른다 */
 var CAT_SPAR = [
-  { t: 'narr', text: '(수아가 캔을 들고 내 쪽으로 몸을 조금 돌렸다. 다들 들을 만한 목소리로.)' },
-  { t: 'say', who: 'sua', text: '하나만 물어봐도 돼? 여기 있는 사람 중에 이미 마음 정한 사람 있어?' },
-  { t: 'narr', text: '(질문은 나한테 했는데, 시선은 X에게서 떨어지지 않았다.)' },
-  { t: 'say', who: 'sua', text: '내가 먼저 물어봤으니까 나도 먼저 말할게. 난 있어. 오늘 하루만 보고 정한 건 아니야.' },
-  { t: 'narr', text: '(테이블 아래에서 누가 컵을 내려놓았다. 소리는 아주 작았는데, 다 들렸다.)' }
+  {t:'say',who:'sua',text:'"다들 여기 온 지 며칠 됐죠? 벌써 마음 가는 사람이 생겼어요?"'},
+  {t:'narr',text:'수아의 질문은 모두에게 향했지만, 마지막 시선은 X에게 머물렀다.'},
+  {t:'say',who:'sua',text:'"나는 있어요. 아직 많이 알아가는 중이지만, 먼저 말을 걸어 보고 싶어요."'},
+  {t:'say',who:'seoyeon',text:'"좋네. 여기서는 마음 생기면 직접 표현하는 게 제일 빠르더라."'}
 ];
 
 /* 수아가 X의 물건을 정확히 짚는다 — 신경전 */
@@ -2821,17 +2666,7 @@ var CAT_XHIT = {
   sakuya: { t: 'say', who: 'sua', text: '이거 직접 구운 거지? 표면 결이 딱 그래. 하나만 줄래? 아니, 하나만 받을게.' }
 };
 
-var CAT_ASK = { t: 'say', who: 'sua', text: '하나 물어볼게. 내일 2차 데이트 지목권이 있다며? 여기 온 지 얼마 안 됐지만 누구를 고를지는 정했어. 난 한 사람만 볼 거야.' };
-
-/* 수아의 데이트 신청에 X가 답한다 */
-var CAT_XDECLINE = {
-  riku: { t: 'say', who: 'riku', text: '미안. 내일은 내가 먼저 말할 사람이 있어.' },
-  sion: { t: 'say', who: 'sion', text: '미안. 내일은 내가 먼저 말할 사람이 있어. 순서를 바꿀 생각은 없어.' },
-  yushi: { t: 'say', who: 'yushi', text: '내일은 안 될 것 같아. 미리 말해 둘게. 나는 한 사람만 보고 있어.' },
-  jaehee: { t: 'say', who: 'jaehee', text: '아, 나 내일은 약속이 있어. 미리 말 못 해서 미안. 근데 이건 약속이라기보다는, 내가 정한 거야.' },
-  ryo: { t: 'say', who: 'ryo', text: '나 내일 좀 바빠. 진짜야. 농담 아니야. 한 사람한테만 바쁜 거고.' },
-  sakuya: { t: 'say', who: 'sakuya', text: '미안. 내일은 내가 먼저 물어볼 사람이 있어서. 오늘 아침에 정했어.' }
-};
+var CAT_ASK = {t:'say',who:'sua',text:'"내일 데이트 기회가 있으면 그 사람을 선택할 거예요. 아직 같이 얘기해 본 시간이 짧으니까, 더 알아보고 싶어요."'};
 
 var CAT_XHESITATE = {
   riku: { t: 'say', who: 'riku', text: '내일까지 생각해 볼게.' },
@@ -3005,12 +2840,12 @@ var XTENSION = {
 
 /* 현관에서 처음 마주칠 때 — 이름부터 밝힌다 (규칙: 이름·나이·직업은 공개, 누구의 X인지만 비밀) */
 var ARRIVE_INTRO = {
-  riku: { t: 'say', who: 'riku', text: '"마에다 리쿠예요. 패션 매거진 사진 찍어요. 잘 부탁해요."' },
-  sion: { t: 'say', who: 'sion', text: '"오시온이에요. 건축 디자이너로 일해요. 짐 무거우면 제가 들게요."' },
-  yushi: { t: 'say', who: 'yushi', text: '"토쿠노 유우시예요. 사운드 디자인 일을 해요. 잘 부탁해요."' },
-  jaehee: { t: 'say', who: 'jaehee', text: '"김대영이에요! 노래 만들어요. 아, 여기선 이름부터 말하는 거죠? 잘 부탁해요!" (혼자 먼저 웃었다. 그 웃음에 다들 같이 웃었다.)' },
-  ryo: { t: 'say', who: 'ryo', text: '"히로세 료예요. 빈티지 샵 운영해요. 편하게 료라고 불러요."' },
-  sakuya: { t: 'say', who: 'sakuya', text: '"후지나가 사쿠야예요. 파티시에로 일해요. 아침에 디저트 만들어 올게요."' }
+  riku: { t: 'say', who: 'riku', text: '"마에다 리쿠입니다. 패션 매거진 사진을 찍고 있습니다. 잘 부탁드립니다."' },
+  sion: { t: 'say', who: 'sion', text: '"오시온입니다. 건축 디자이너로 일하고 있습니다. 짐이 무거우시면 제가 들어 드리겠습니다."' },
+  yushi: { t: 'say', who: 'yushi', text: '"토쿠노 유우시입니다. 사운드 디자인 일을 하고 있습니다. 잘 부탁드립니다."' },
+  jaehee: { t: 'say', who: 'jaehee', text: '"김대영입니다! 노래를 만들고 있어요. 아, 여기서는 이름부터 말씀드리는 거죠? 잘 부탁드립니다!" (혼자 먼저 웃었다. 그 웃음에 다들 같이 웃었다.)' },
+  ryo: { t: 'say', who: 'ryo', text: '"히로세 료입니다. 빈티지 숍을 운영하고 있습니다. 료라고 불러 주시면 됩니다."' },
+  sakuya: { t: 'say', who: 'sakuya', text: '"후지나가 사쿠야입니다. 파티시에로 일하고 있습니다. 내일 아침에 디저트를 만들어 오겠습니다."' }
 };
 
 /* 자기소개 시간 — 이름은 이미 아니까, 나이 · 하는 일 · 첫인상 */
@@ -3653,7 +3488,7 @@ function updateAff() {
 function setHud(n) {
   var meta = (typeof DAY_META !== 'undefined' && DAY_META[n]) || ['', ''];
   var d = $('#hud-day');
-  if (d) d.textContent = 'DAY ' + (typeof pad2 === 'function' ? pad2(n) : n);
+  if (d) d.textContent = 'D-DAY ' + (typeof pad2 === 'function' ? pad2(n) : n);
   var ph = $('#hud-phase');
   if (ph) ph.textContent = meta[0];
   updateAff();
@@ -3935,7 +3770,15 @@ function renderDex(curKey) {
     '<div class="dl-c">7가지 결말 중 ' + n + '가지를 만났어요</div></div>' +
     '<div class="dex-count">' + n + '<span> / 7</span></div></div>' +
     '<div class="dex-grid">' + dexGridHTML(curKey) + '</div>' +
-    '<p class="dex-note">다른 선택, 다른 상대, 다른 마음으로<br>나머지 결말도 만나 보세요 ♡</p>';
+    (S ? '<div class="menu-block" style="margin-top:14px"><h4>입주 기록</h4>' +
+      '<div class="mrow"><span class="mk">이름</span><span class="mv">' + esc(S.name) + '</span></div>' +
+      '<div class="mrow"><span class="mk">나이</span><span class="mv">' + S.age + '세</span></div>' +
+      '<div class="mrow"><span class="mk">직업</span><span class="mv">' + esc(jobLabel()) + '</span></div>' +
+      '<div class="mrow"><span class="mk">현재 날짜</span><span class="mv">DAY ' + pad2(S.day || 1) + '</span></div>' +
+      '<button class="mbtn danger" id="dex-reset" type="button">처음부터 다시 시작</button></div>' : '') +
+    '<p class="dex-note">다른 선택, 다른 상대, 다른 마음으로<br>나머지 결말도 만나 보세요</p>';
+  var reset = $('#dex-reset');
+  if (reset) reset.onclick = function () { closeSheet('sheet-dex'); resetGame(); };
 }
 
 /* ---------- 기록 ---------- */
@@ -3983,10 +3826,9 @@ function renderMenu() {
     '<button class="mbtn danger" id="m-reset" type="button">처음부터 다시 시작</button>' +
     '<p class="menu-note">입주자 사진은 이 기기에만 저장돼요.</p>';
   var d = $('#m-dex');
-  if (d) d.onclick = function () { closeSheet('sheet-menu'); renderDex(); openSheet('sheet-dex'); };
+  if (d) d.onclick = function () { renderDex(); openSheet('sheet-dex'); };
   var r = $('#m-reset');
   if (r) r.onclick = function () {
-    closeSheet('sheet-menu');
     resetGame();
   };
 }
@@ -4148,7 +3990,7 @@ function syncStartBtn() {
   }
 }
 
-/* ---------- 시그널함 ---------- */
+/* ---------- 메세지함 ---------- */
 function renderInbox() {
   if (!S) return;
   S.unread = 0;
@@ -4156,7 +3998,7 @@ function renderInbox() {
   var body = $('#inbox-body');
   if (!body) return;
   if (!S.inbox.length) {
-    body.innerHTML = '<div class="ib-empty">아직 주고받은 시그널이 없어요.<br>밤이 되면 마음이 머문 <b>한 사람</b>에게 보낼 수 있어요.</div>';
+    body.innerHTML = '<div class="ib-empty">아직 주고받은 메세지가 없어요.<br>밤이 되면 마음이 머문 <b>한 사람</b>에게 보낼 수 있어요.</div>';
     return;
   }
   var days = {};
@@ -4170,7 +4012,7 @@ function renderInbox() {
     html += '<div class="ib-day' + (idx ? ' collapsed' : '') + '">';
     html += '<button class="ib-head" type="button">' +
       '<span class="ib-daynum">DAY ' + pad2(d) + '</span>' +
-      '<span class="ib-daymeta">밤 · 받은 시그널 ' + recv + '통</span>' +
+      '<span class="ib-daymeta">밤 · 받은 메세지 ' + recv + '통</span>' +
       '<i class="ib-chev">⌄</i></button>';
     html += '<div class="ib-list">';
     notes.forEach(function (n) {
@@ -4202,14 +4044,14 @@ function renderInbox() {
 /* ---------- 미니게임 (Day2 가위바위보 / Day4 참참참) ---------- */
 var MG_CONF = {
   rps: {
-    title: '데이트 지목권', sub: '3판 2선승 · 상대의 선택을 읽어 보기',
-    labels: ['가위', '바위', '보'], icons: ['✌️', '✊', '🖐️'],
-    guide: '상대의 표정을 보고 골라 봐요. 먼저 2승을 하면 지목권을 가져갑니다.'
+    title: '비밀 취향 맞히기', sub: '3판 2선승 · 상대의 선택을 읽어 보세요',
+    labels: ['바다 여행', '집에서 쉬기', '즉흥 드라이브'], icons: ['🌊', '🛋️', '🚗'],
+    guide: '상대가 오늘 가장 끌리는 선택지를 맞히면 1점입니다. 먼저 2점을 얻으면 데이트 지목권을 가져갑니다.'
   },
   cham: {
-    title: '2차 데이트 지목권', sub: '3판 2선승 · 눈치 싸움',
-    labels: ['왼쪽', '위', '오른쪽'], icons: ['👈', '👆', '👉'],
-    guide: '상대가 시선을 돌릴 방향을 예측해 보세요. 맞히면 1승입니다.'
+    title: '마지막 한 장', sub: '3판 2선승 · 같은 답을 고르면 성공',
+    labels: ['솔직하게 말하기', '끝까지 숨기기', '상대에게 묻기'], icons: ['💬', '🤐', '❔'],
+    guide: '상대가 고를 답을 예측해 보세요. 같은 답을 고르면 1점입니다.'
   }
 };
 /* 가위바위보 판정: 0 가위 · 1 바위 · 2 보 */
@@ -4286,10 +4128,10 @@ function showMiniGame(node, done) {
         handEl.textContent = conf.icons[o];
         handEl.classList.add('pop');
       }
-      var r = kind === 'rps' ? mgRps(pick, o) : mgCham(pick, o);
-      if (r > 0) { my++; say('이번 판, 이겼어요'); }
-      else if (r < 0) { ow++; say('이번 판, 졌어요'); }
-      else { say('비겼어요. 한 번 더'); }
+      var r = pick === o ? 1 : -1;
+      if (r > 0) { my++; say('정답이에요. 상대의 선택을 맞혔어요.'); }
+      else if (r < 0) { ow++; say('빗나갔어요. 상대는 다른 선택을 했어요.'); }
+      else { say('같은 선택이에요. 이번 판은 무승부입니다.'); }
       paint();
       busy = false;
       if (mgWon(my) || mgWon(ow)) finish(mgWon(my));
@@ -4327,8 +4169,8 @@ function relOf(m) {
 function relLabel(m) {
   var r = relOf(m);
   if (r === 'older') return (S.age - m.age) + '살 연상 · ' + m.call + '은 누나라고 불러요';
-  if (r === 'same') return '동갑 · 서로 반말';
-  return (m.age - S.age) + '살 연상 · ' + m.call + '도 반말';
+  if (r === 'same') return '동갑 · 처음에는 존댓말';
+  return (m.age - S.age) + '살 연하 · 처음에는 존댓말';
 }
 function numWord(n) {
   var w = ['', '한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
@@ -4451,9 +4293,8 @@ function affUp(id, v) {
   S.aff[id] = Math.max(0, Math.min(100, S.aff[id] + v));
   var p = findPerson(id);
   if (!quietAff) {
-    if (v > 0) toast(p.call + ' · 마음 +' + v);
-    else if (v <= -4) toast(p.call + ' · 마음이 한 뼘 멀어졌어요', true);
-    else if (v < 0) toast(p.call + ' 마음 ' + v, true);
+    if (v > 0) toast(p.call + ' · 호감도 +' + v + ' (현재 ' + S.aff[id] + '/100)');
+    else if (v < 0) toast(p.call + ' · 호감도 ' + v + ' (' + Math.abs(v) + ' 하락, 현재 ' + S.aff[id] + '/100)', true);
   }
   if (typeof updateAff === 'function') updateAff();
 }
@@ -5055,7 +4896,7 @@ var DAY_META = {
   4: ['2차 데이트', '지목, 그리고 흔들리는 판'],
   5: ['나들이', '한 번 더 흔들리는 하루'],
   6: ['비밀 대화', '마지막 전날 밤'],
-  7: ['최종 선택', '이름을 부르는 밤']
+  7: ['최종 선택', '최종 선택']
 };
 
 function dayCard(next, cb) {
@@ -5094,7 +4935,7 @@ function startDay(n) {
 function setHud(n) {
   var meta = DAY_META[n] || ['', ''];
   var d = $('#hud-day');
-  if (d) d.textContent = 'DAY ' + (typeof pad2 === 'function' ? pad2(n) : n);
+  if (d) d.textContent = 'D-DAY ' + (typeof pad2 === 'function' ? pad2(n) : n);
   if (typeof updateAff === 'function') updateAff();
 }
 
@@ -5143,7 +4984,7 @@ function seatChoiceNode() {
     var e = {}; e[m.id] = 3;
     var react = (typeof SEAT_REACT !== 'undefined' && SEAT_REACT[m.id]) ? SEAT_REACT[m.id]
       : { t: 'say', who: m.id, text: '"여기 앉아."' };
-    opts.push({ label: findPerson(m.id).call + ' 옆자리에 앉는다', eff: e, say: '"여기 앉을게."', after: [react] });
+    opts.push({ label: findPerson(m.id).call + ' 옆자리에 앉는다', eff: e, say: '"저 여기 앉아도 돼요?"', after: [react] });
   });
   opts.push({
     label: '창가에 혼자 앉는다', eff: { x: -1 }, say: '"나는 창가 쪽에 앉을게."',
@@ -5157,7 +4998,6 @@ function seatChoiceNode() {
 }
 function buildDay1() {
   var x = S.xId;
-  /* 현관에 들어오는 남자 입주자는 나이 순서대로 한 명씩. X는 마지막. */
   var order = roster().filter(function (m) { return m.id !== x; });
   order.sort(function (a, b) {
     if (b.age !== a.age) return b.age - a.age;
@@ -5165,100 +5005,62 @@ function buildDay1() {
   });
   var out = [
     L('night', '하우스 · 현관'),
-    N('여름 끝. 서울 외곽, 담장 높은 집 앞에 캐리어 하나가 서 있었다.'),
-    ME('…여기까지 와 놓고 돌아갈 수는 없지.'),
-    SYS('환승연애 · 7일간의 기록이 시작됩니다.'),
-    N('규칙은 딱 하나. 이름도 나이도 숨기지 않는다. 숨기는 건 누구의 전 연인이 누구인지, 그것뿐.'),
+    N('해가 완전히 지기 전, 서울 외곽의 조용한 주택가에 차 한 대가 멈춰 섰다. 캐리어 손잡이를 쥔 손에 힘이 들어갔다.'),
+    ME('괜찮아. 일주일뿐이야. 여기서는 서로 모르는 사람처럼 지내면 돼.'),
+    SYS('환승연애 · 일곱 명의 입주자와 일곱 날의 기록이 시작됩니다.'),
+    N('규칙은 딱 하나. 이름도 나이도 숨기지 않는다. 숨기는 건 나의 전 연인이 누구인지, 그것뿐.'),
+    N('현관문을 열자 따뜻한 조명과 낯선 사람들의 목소리가 한꺼번에 밀려왔다.'),
     L('house', '하우스 · 거실'),
-    SAY('seoyeon', '"안녕하세요, 저는 한서연이에요. 제일 먼저 와서 기다리고 있었어요. 짐은 이쪽에 놓으세요."'),
-    ME('"안녕하세요, 저는 ' + withJosa(nm(), '이에요', '예요') + '. 잘 부탁해요."'),
-    SAY('chaewon', '"안녕하세요! 저는 윤채원이에요. 안에 자리 하나 비워 뒀어요."'),
-    SAY('jiwoo', '"강지우예요. …안녕하세요."'),
-    N('(계단에서 남자 입주자가 한 명씩 내려왔다. 내려오는 사람마다 먼저 자기 이름을 말했다.)')
+    SAY('seoyeon', '"안녕하세요. 한서연이에요. 먼저 도착해서 기다리고 있었어요. 짐은 소파 옆에 두시면 돼요."'),
+    ME('"안녕하세요. ' + withJosa(nm(), '이에요', '예요') + '. 잘 부탁드립니다."'),
+    SAY('chaewon', '"윤채원이에요. 긴장되시죠? 저도 아직 어색해서 계속 물만 마시고 있었어요."'),
+    SAY('jiwoo', '"강지우예요. 반가워요. 편하게 앉으세요."'),
+    N('짧은 인사가 오간 뒤, 계단 위에서 발소리가 들렸다. 남자 입주자들이 차례로 거실에 들어왔다.'),
   ];
   order.forEach(function (m) {
     if (ARRIVE_INTRO[m.id]) out.push(ARRIVE_INTRO[m.id]);
   });
-  out.push(L('night', '하우스 · 현관'), N('(마지막으로 현관문이 열렸다.)'));
-  XDATA[x].reunion.forEach(function (n) { out.push(n); });
   out.push(
-    SAY(x, '"…' + withJosa(findPerson(x).name, '이에요', '예요') + '. 잘 부탁해요."'),
-    ME('…숨 고르자. 여기서는 처음 보는 사람이야.'),
+    L('night', '하우스 · 현관'),
+    N('마지막 입주자가 도착할 차례였다. 현관문이 열리고, 익숙한 걸음이 복도를 지나왔다.'),
+  );
+  XDATA[x].reunion.forEach(function (n) {
+    if (n.t === 'narr') out.push(n);
+    else out.push({ t: 'say', who: x, text: '"안녕하세요. 잘 부탁드립니다."' });
+  });
+  out.push(
+    SAY(x, '"' + withJosa(findPerson(x).name, '이에요', '예요') + '. 잘 부탁드립니다."'),
+    N('그는 다른 입주자들과 같은 속도로 고개를 숙였다. 시선이 잠깐 마주쳤지만, 누구도 그 의미를 알아차릴 만큼 길지는 않았다.'),
+    ME('…지금은 아무렇지 않은 얼굴을 해야 해.'),
     L('house', '하우스 · 거실'),
-    SYS('자기소개 시간 — 나이, 하는 일, 그리고 첫인상. 한 명씩.'),
-    N('(' + numKo(roster().length + WOMEN.length + 1) + ' 명이 둥글게 앉았다.)')
+    SYS('첫 번째 자기소개 — 이름과 나이, 직업을 차례로 소개합니다.'),
+    N('모두가 소파에 둘러앉았다. 서연이 테이블 위의 명패를 한 장씩 나눠 주었다.'),
+    SAY('seoyeon', '"먼저 이름이랑 나이, 하시는 일을 소개할게요. 그다음에는 이 집에서 어떤 시간을 보내고 싶은지도 한마디씩 나눠 봐요."'),
+    ME('"저는 ' + nm() + ', ' + S.age + '살이고 ' + jobLabel() + ' 일을 하고 있어요. 낯을 조금 가리지만, 먼저 말 걸어 주시면 금방 편해질 것 같아요. 잘 부탁드립니다."'),
+    N('자기소개가 이어졌다. 처음에는 어색했던 목소리도 몇 사람의 차례가 지나자 조금씩 자연스러워졌다.'),
+    SAY('seoyeon', '"이제 마지막으로, 첫인상에서 기억에 남은 사람을 한 명씩 말해 볼까요? 이유는 짧게만 이야기해도 괜찮아요."'),
+    N('몇몇 시선이 테이블을 오갔다. 누군가는 웃으며 대답했고, 누군가는 물컵을 만지작거리며 생각을 골랐다.'),
+    SAY(x, '"아직은 다들 잘 몰라서요. 오늘 대화하면서 천천히 알아가고 싶습니다."'),
+    N('그의 대답은 누구에게나 할 수 있는 말이었다. 적어도 다른 사람들 앞에서는 그랬다.'),
+    SYS('첫인상 선택 — 오늘 가장 더 알아보고 싶은 사람을 선택하세요.')
   );
-  order.forEach(function (m) { out.push(MEMBER_INTRO[m.id]); });
-  WOMEN_INTRO.forEach(function (n) { out.push(n); });
-  out.push(XINTRO[x]);
-  out.push(
-    { t: 'say', who: 'seoyeon', text: '"마지막으로 자기소개한 사람은 나이랑 하는 일도 알려 줄래요?"' },
-    ME('"저는 ' + ageWord(S.age) + ' 살이고, ' + withJosa(jobLabel(), '이에요', '예요') + '. 잘 부탁드려요."'),
-    SYS('자기소개가 끝났다. 이제 서로의 나이와 하는 일을 알게 됐다.'),
-    /* ---- 첫 만남에는 존댓말, 서로 동의한 뒤에는 반말 ---- */
-    { t: 'say', who: 'seoyeon', text: '"이제 서로 나이도 알았으니까, 말은 어떻게 할까요? 계속 존댓말을 쓰면 조금 어색할 것 같아서요."' },
-    { t: 'say', who: 'chaewon', text: '"저는 편하게 말 놓는 게 좋아요. 금방 친해질 것 같은데 계속 존댓말 쓰면 어색하잖아요."' },
-    {
-      t: 'choice', prompt: '(다들 내 대답을 기다렸다. 나도 이제는 편하게 지내고 싶었다.)', opts: [
-        {
-          label: '“저도 이제 말 편하게 놓을게요.”', eff: { x: 0 },
-          say: '“저도 이제 말 편하게 놓을게요. 다들 편하게 말해 주세요.”',
-          after: [
-            { t: 'say', who: 'seoyeon', text: '“좋아. 그럼 지금부터 우리 다 편하게 말하자.”' },
-            { t: 'say', who: 'jiwoo', text: '“응. 나도 그게 편해.”' },
-            { t: 'narr', text: '(서로 웃으며 고개를 끄덕였다. 그제야 처음 만난 사람들 사이의 어색함이 조금 풀렸다.)' }
-          ]
-        },
-        {
-          label: '“우리 서로 이름 부르면서 편하게 지내요.”', eff: { x: 0 },
-          say: '“우리 서로 이름 부르면서 편하게 지내요. 저도 말 놓을게요.”',
-          after: [
-            { t: 'say', who: 'seoyeon', text: '“좋아. 그럼 이름 부르고 말도 놓자.”' },
-            { t: 'say', who: 'chaewon', text: '“좋아요. 아니, 좋다! 벌써 편해진 것 같아.”' }
-          ]
-        },
-        {
-          label: '“저도 반말할게요. 다들 괜찮죠?”', eff: { x: 0 },
-          say: '“저도 반말할게요. 다들 괜찮죠?”',
-          after: [
-            { t: 'say', who: 'seoyeon', text: '“당연하지. 그럼 우리 이제 편하게 말하자.”' },
-            { t: 'say', who: 'jiwoo', text: '“응. 잘 지내 보자.”' }
-          ]
-        }
-      ]
-    },
-    { t: 'flag', introDone: true, spoken: 1 },
-    L('house', '하우스 · 주방'),
-    SAY('jaehee', '"도와줄까?"'),
-    SAY('ryo', '"그거 손 다치겠다. 나한테 줘."'),
-    L('house', '하우스 · 거실')
-  );
-  STYLE_TALK.forEach(function (n) {
-    if (n && n.who === S.catMaleId && !S.catMaleJoined) return;
-    out.push(n);
-  });
-  order.forEach(function (m) {
-    out.push(SAY(m.id, AGE_REACT[m.id][relOf(m)]));
-  });
-  STYLE_ME.forEach(function (n) { out.push(n); });
-  out.push(STYLE_XREACT[x]);
-  out.push(SYS('저녁 준비가 끝났다. ' + numKo(roster().length + WOMEN.length + 1) + ' 명이 긴 테이블로 모였다.'));
   out.push(seatChoiceNode());
   out.push(
-    L('night', '하우스 · 테라스'),
-    N('(식사가 끝나고 하나둘 자리에서 일어났다. 나는 테라스로 나갔다.)'),
-    N('(뒤에서 발소리가 났다. 돌아보지 않아도 누구인지 알 수 있었다.)'),
-    SAY(x, XDATA[x].d1)
+    L('house', '하우스 · 주방'),
+    N('저녁 준비를 위해 몇 사람이 주방으로 향했다. 접시가 부딪히는 소리와 물 끓는 소리가 집 안을 채웠다.'),
+    SAY('chaewon', '"혹시 칼질 괜찮으세요? 저는 옆에서 재료 씻을게요."'),
+    ME('"네, 제가 할게요. 필요한 거 있으면 말씀해 주세요."'),
+    N('누군가의 웃음에 긴장이 조금 풀렸다. 오늘 하루만큼은 이곳이 정말 처음 만난 사람들의 집처럼 느껴졌다.'),
+    L('house', '하우스 · 거실'),
+    N('식사가 끝난 뒤, 각자 방을 확인하고 짐을 정리할 시간이 주어졌다. 거실에는 아직 치우지 못한 컵 몇 개가 남아 있었다.'),
+    SAY('seoyeon', '"오늘은 첫날이니까 무리하지 말고 쉬어요. 내일부터는 같이 보내는 시간이 더 많아질 거예요."'),
+    N('방으로 돌아가려는데 복도 끝에서 그와 마주쳤다. 둘만 남은 짧은 순간이었다.'),
+    SAY(x, '"오늘은… 불편하게 해서 미안해요. 여기서는 다른 사람들 앞에서 티 내지 않을게요."'),
+    ME('"저도 그래요. 아직은 서로 조심하는 게 좋겠어요."'),
+    N('그는 고개를 끄덕이고 먼저 한 걸음 물러났다. 붙잡지도, 아무렇지 않은 척 웃지도 않았다.'),
+    N('방 문을 닫고 나서야 숨을 길게 내쉬었다. 일주일은 생각보다 길지도, 짧지도 않을 것 같았다.'),
+    { t: 'night' }
   );
-  out.push({
-    t: 'choice', prompt: '(그가 옆에 섰다. 아무 말도 하지 않는다.)', opts: [
-      { label: '고맙다고 말한다', eff: { x: 0 }, say: '"고마워. 짐도 들어 주고."', after: [{ t: 'say', who: x, text: '"…그거, 고맙다고 할 일은 아니야."' }] },
-      { label: '아무 말 없이 옆에 선다', eff: { x: 0 }, say: '(말없이 옆에 섰다)', after: [{ t: 'narr', text: '(오 분쯤 그렇게 있었다. 그가 먼저 들어갔다. 문을 닫기 전에 잠깐 멈췄다.)' }] },
-      { label: '먼저 방으로 들어간다', eff: { x: -1 }, say: '"…먼저 들어갈게."', after: [{ t: 'narr', text: '(그가 아무 말도 하지 않았다. 대신 주머니에 손을 넣었다가 뺐다.)' }] }
-    ]
-  });
-  out.push({ t: 'night' });
-  /* 아직 합류하지 않은 메기남의 대사·행동은 어떤 경로로도 나오지 않게 한다. */
   return out.filter(function (n) { return !(n && n.who && !isPresent(n.who)); });
 }
 
@@ -5561,7 +5363,7 @@ function buildDay3() {
               { label: '아무 말 없이 웃는다', eff: { x: 0 }, say: '(웃기만 했다)', after: (function () {
                 var a = []; CAT_AFTER.pass.forEach(function (n) { a.push(n); }); return a;
               })() },
-              { label: '"그 자리는 비어 있지 않아"', eff: { x: 4 }, say: '"그 자리는 비어 있지 않아."', after: CAT_AFTER.claim },
+              { label: '"그 자리는 비어 있지 않아"', eff: { x: 4 }, say: '"그 사람과는 아직 할 얘기가 남아 있어."', after: CAT_AFTER.claim },
               { label: '고개를 숙인다', eff: { x: -3 }, say: '(고개를 숙였다)', after: CAT_AFTER.bow },
               { label: 'X를 본다', eff: { x: 1 }, say: '(X를 봤다)', after: [{ t: 'narr', text: '(그가 잠깐 내 쪽으로 고개를 돌렸다. 그리고 다시 수아를 봤다. 그 순서가 마음에 걸렸다.)' }] }
             ]
@@ -5604,20 +5406,20 @@ function buildDay3() {
 /* ---- DAY 4 ---- */
 /* 늦게 합류하는 남자 입주자(위시 멤버 1명) */
 var CAT_JOIN_LINE = {
-  riku: '\"마에다 리쿠예요. 사진 찍는 일 해요. …늦어서 죄송해요. 근데 이 집 사진을 보다가, 한 장이 계속 눈에 남아서요.\" (그가 나를 봤다. 아무도 모르게, 아주 짧게.)',
-  sion: '\"오시온이에요. 스물다섯. 건축 일 해요. …제가 마지막이라고 들었는데, 처음 뵙는 분이 한 분 계시네요.\" (그가 나를 향해 고개를 숙였다. 인사치고 조금 오래.)',
-  yushi: '\"토쿠노 유우시. 소리 만드는 일 해요. …여기, 소리가 좋네요. 그리고, 처음 뵙는데 실례인데… 목소리도 좋네요.\" (말하고 나서 자기가 뭘 말했는지 알고 이어폰을 만지작거렸다.)',
-  jaehee: '\"김대영이에요! 스물둘, 노래해요. 아, 늦게 와서 죄송해요. 근데 들어오자마자 한 분이 눈에 들어와서, 그거 말하려고 여기까지 왔어요.\" (크게 웃었다.)',
-  ryo: '\"히로세 료, 스무 살. 옷 가게 해요. …처음 뵙죠? 아, 이렇게 물어놓고 대답 안 기다리는 거 제 버릇이에요.\" (웃었다. 이번엔 좀 오래.)',
-  sakuya: '\"후지나가 사쿠야예요. 스무 살, 빵 만들어요. …이거, 제가 만든 마들렌인데요. 첫날이라 드리고 싶었어요. 아니, 한 분한테만요.\"'
+  riku:'"마에다 리쿠예요. 사진 관련 일을 하고 있어요. 늦게 들어오게 됐네요. 잘 부탁해요."',
+  sion:'"오시온입니다. 건축 쪽에서 일해요. 갑자기 합류해서 어색하겠지만 잘 지내 봐요."',
+  yushi:'"토쿠노 유우시예요. 음악 작업하고 있어요. 다들 이미 친해진 것 같아서 조금 긴장되네요."',
+  jaehee:'"김대영이에요. 음악 하고 있어요. 늦게 와서 미안해요. 금방 적응해 볼게요."',
+  ryo:'"히로세 료예요. 옷 관련 일을 해요. 아직 이름도 다 못 외웠는데 잘 부탁해요."',
+  sakuya:'"후지나가 사쿠야예요. 베이킹 일을 하고 있어요. 작은 선물 가져왔는데 같이 먹어요."'
 };
 var CAT_JOIN_INVITE = {
-  riku: '“아, 다들 말 놓기로 했다고 들었어. 나도 편하게 말할게. 여기 온 이유는 분명해. 너랑 얘기해 보고 싶었어. 오늘 나랑 데이트 가 줄래? 거절해도 내일 다시 물어볼 거야.”',
-  sion: '“나도 이제 말 놓을게. 마음에 드는 사람이 있어서 들어왔어. 오늘은 내가 먼저 신청할게. 나랑 같이 나가자.”',
-  yushi: '“나도 편하게 말할게. 여기 온 이유는 너야. 오늘 나랑 나가자. 더 미루고 싶지 않아.”',
-  jaehee: '“나도 말 놓을게! 여기 오기 전부터 꼭 만나 보고 싶은 사람이 있었어. 오늘 나랑 데이트 가자. 나 진짜 잘할 자신 있어.”',
-  ryo: '“나도 말 놓을게. 눈치 보다가 타이밍 놓치는 건 싫어서 바로 말할게. 오늘 나랑 가자. 싫다고 해도 한 번은 더 물어볼 거야.”',
-  sakuya: '“나도 편하게 말할게. 여기서 꼭 친해지고 싶은 사람이 있어. 오늘 나랑 같이 나가 줄래? 나 꽤 진심이야.”'
+  riku:'"여기 오기 전부터 얘기 나눠 보고 싶은 사람이 있었어. 갑자기 말해서 미안한데, 오늘 시간 되면 나랑 잠깐 나갈래?"',
+  sion:'"마음에 걸리는 사람이 있어서 들어왔어. 아직 서로 잘 모르니까, 오늘 같이 얘기해 보고 싶어. 나랑 나갈래?"',
+  yushi:'"나 여기서 꼭 얘기해 보고 싶은 사람이 있어. 부담 주려는 건 아니고, 오늘 같이 시간 보내고 싶어."',
+  jaehee:'"오기 전부터 궁금했던 사람이 있어. 오늘 나랑 데이트할래? 편하게 얘기하면서 서로 알아가고 싶어."',
+  ryo:'"눈치 보다가 기회 놓치기 싫어서 먼저 말할게. 오늘 나랑 같이 나가 볼래?"',
+  sakuya:'"여기서 친해지고 싶은 사람이 있어. 오늘 같이 나가 줄래? 맛있는 거 먹으러 가자."'
 };
 function catMaleJoinScene(x) {
   var c = S.catMaleId;
@@ -6013,12 +5815,12 @@ function buildDay6() {
 /* ---- DAY 7 : 최종 선택 ---- */
 /* 마지막 밤, X가 남기는 말 — 돌아갈 수 없다는 걸 알면서도 그때로 돌아가 보고 싶은 마음 */
 var DAY7_LAST = {
-  riku: '"…이 사진, 못 지웠어. 찍은 날로 돌아갈 수는 없잖아. 근데 가끔 생각해. 그날 내가 카메라를 내려놨으면, 우리 지금 뭘 하고 있을까."',
-  sion: '"도면은 고칠 수 있어. 창도 늘릴 수 있어. 근데 지난겨울은 못 고쳐. 그때 네가 기다리던 밤에 내가 문을 열었으면, 하는 생각을 안 하는 날이 없어."',
-  yushi: '"이 곡, 처음부터 다시 만들 수 있어. 근데 그날 밤은 다시 시작이 안 돼. 내가 그때 이어폰을 뺐으면. 그 한 번이면 됐을 것 같은데."',
-  jaehee: '"노래는 다시 부를 수 있어. 근데 그날 네가 혼자 있던 시간은 다시 안 돌아와. 그 생각하면 목이 막혀. 다른 선택을 했다면, 우린 좀 달라졌을까."',
-  ryo: '"농담 아니고. 그때 내가 웃지만 않았어도. 그 하루만 다시 살 수 있으면, 나는 진짜 다 바꿀 건데."',
-  sakuya: '"마들렌은 다시 구울 수 있어. 근데 그날 밤은 다시 안 와. 내가 그때 먼저 정했으면, 우리 조금은 달라졌을까."'
+  riku:'"사진을 다시 봤어. 잘 나온 사진보다 흔들린 사진이 더 많더라. 그때는 몰랐는데, 내가 너랑 있는 순간을 제대로 보고 있지 않았나 봐. 오늘은 피하지 않고 네 대답을 들을게."',
+  sion:'"그때는 준비가 되면 말하겠다고 생각했어. 그런데 준비만 하다가 너를 놓쳤지. 다시 시작할 수 있다면 이번에는 기다리게 하지 않을게. 말하고, 확인하고, 같이 결정할게."',
+  yushi:'"네가 말해 달라고 했을 때 음악부터 보냈어. 그게 편했거든. 이제는 알겠어. 네가 듣고 싶었던 건 곡이 아니라 내 대답이었어. 오늘은 제대로 말할게."',
+  jaehee:'"내가 힘들다는 말은 많이 했는데 네가 힘든지는 늦게 물어봤어. 그게 미안해. 좋아했던 마음만 말하고 끝내고 싶진 않아. 내가 바꿔야 할 것도 알고 있어."',
+  ryo:'"웃기면 괜찮아질 줄 알았어. 근데 네가 진지하게 말할 때마다 피한 거였더라. 오늘은 웃으면서 넘어가지 않을게. 네가 어떤 답을 해도 제대로 들을게."',
+  sakuya:'"네가 정해 주는 대로 따라가면 다 괜찮을 줄 알았어. 사실은 내가 틀리는 게 무서웠어. 이제는 내가 원하는 것도 말할게. 네가 원하는 것도 물어볼게."'
 };
 function buildDay7() {
   var x = S.xId;
@@ -6028,10 +5830,10 @@ function buildDay7() {
     N('(현관에 캐리어가 세워져 있었고, 거실 테이블 위에 이름표가 놓여 있었다. 내 이름도 그중에 있었다.)'),
     SAY(x, DAY7_AM[x]),
     ME('…일곱 밤이 지났다. 처음 온 날보다 지금이 더 무섭다.'),
-    SYS('최종 선택 — 한 사람의 이름을 부르거나, 아무도 부르지 않을 수 있습니다.'),
+    SYS('최종 선택 — 마음이 향하는 사람을 선택하거나, 혼자 떠날 수 있습니다.'),
     N('(저녁이 되었다. 촛불이 켜지고, 다들 조용히 제자리에 앉았다.)'),
     /* 이별 문구 — 돌아갈 수 없다는 걸 알면서도 */
-    N('이제는 돌아갈 수 없다는 거 알아. 그런데 가끔은 그때로 돌아가서, 다른 선택을 해 보고 싶어. 그랬다면 지금의 우리는 조금 달라졌을까.'),
+    N('돌아갈 수 없다는 건 알아. 그래도 마지막으로 한 번은 제대로 말하고 싶어. 그때 하지 못했던 말까지.'),
     SAY(x, DAY7_LAST[x]),
     { t: 'final' }
   ];
@@ -6055,7 +5857,7 @@ function showFinal() {
       '<div class="affbar"><i style="width:' + S.aff[m.id] + '%"></i></div></div></button>';
   }
 
-  var html = '<div class="final-lead">마지막 밤이에요.<br>부르고 싶은 이름 하나, 아니면 아무 이름도.</div>' +
+  var html = '<div class="final-lead">마지막 선택이에요.<br>마음이 향하는 이름을 고르세요. 아무도 고르지 않아도 괜찮아요.</div>' +
     '<div class="fsec"><h3>재회 · 나의 X</h3><div class="fnote">' + esc(findPerson(x).name) + ' — 돌아갈 수 있다면</div>' +
     rowHTML(findPerson(x), true) + '</div>' +
     '<div class="fsec"><h3>환승 · 새로운 사람</h3><div class="fnote">이 집에서 처음 마음이 열린 쪽</div>' +
@@ -6064,7 +5866,7 @@ function showFinal() {
     '<button class="fnone" id="f-none" type="button">아무도 부르지 않고 떠나기</button></div>';
 
   openPanel({
-    title: '이름을 부르는 밤', sub: '한 사람만 부를 수 있어요', html: html,
+    title: '최종 선택', sub: '한 사람만 부를 수 있어요', html: html,
     foot: '<button class="btn-primary" id="f-confirm" disabled>이 이름을 부른다</button>'
   });
 
@@ -6255,7 +6057,7 @@ function boot() {
   var bds = $('#btn-dex-start');
   if (bds) bds.onclick = function () { renderDex(); openSheet('sheet-dex'); };
   var bm = $('#btn-menu');
-  if (bm) bm.onclick = function () { renderMenu(); openSheet('sheet-menu'); };
+  if (bm) bm.onclick = null;
   var bauto = $('#btn-auto');
   if (bauto) bauto.onclick = function () { setAuto(!AUTO); };
   var bskip = $('#btn-skip');
@@ -6344,7 +6146,7 @@ function resetGame() {
   if (jm) jm.value = '';
   var nmEl = $('#inp-name');
   if (nmEl) nmEl.value = '';
-  ['sheet-final', 'sheet-people', 'sheet-inbox', 'sheet-log', 'sheet-dex', 'sheet-menu'].forEach(function (id) {
+  ['sheet-final', 'sheet-people', 'sheet-inbox', 'sheet-log', 'sheet-dex'].forEach(function (id) {
     closeSheet(id);
   });
   renderStart();
